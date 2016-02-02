@@ -1,0 +1,97 @@
+$icon-font-path: "../bower_components/bootstrap-sass-official/assets/fonts/bootstrap/";
+// bower:scss
+@import "bootstrap-sass-official/assets/stylesheets/_bootstrap.scss";
+@import "font-awesome/scss/font-awesome.scss";
+// endbower
+
+// fonts
+@import url(https://fonts.googleapis.com/css?family=Oxygen:400,700);
+$font-family: "Oxygen", Helvetica, sans-serif;
+
+// colors
+$blue:          #204056;
+$dark-blue:     #152b39;
+$editor:        #354551;
+$grey-1:        #f1f2f2;
+$grey-2:        #e6e7e8;
+$grey-2-5:      #d1d3d4;
+$grey-3:        #bcbec0;
+$grey-4:        #939598;
+$grey-5:        #4a4a4c;
+$light-blue:    #59a1c9;
+$mint:          #39d1b4;
+$premium-mint:  #34b3a0;
+$red:           #f65a5b;
+
+.red-gradient{
+  background-image: linear-gradient(28deg, #DD2476 0%, #FE5030 100%);
+}
+
+.orange-gradient{
+  background-image: linear-gradient(28deg, #E65600 0%, #F7A600 100%);
+}
+
+.blue-gradient{
+  background-image: linear-gradient(28deg, #2F6FB4 0%, #39C7E9 100%);
+}
+
+.browsehappy {
+  margin: 0.2em 0;
+  background: #ccc;
+  color: #000;
+  padding: 0.2em 0;
+}
+
+body {
+  padding: 0;
+  font-family: $font-family
+}
+
+a{
+  color: $grey-4;
+  &:hover{
+    color: black;
+    text-decoration: none;
+    transition: 0.2s;
+  }
+}
+
+.gradient{
+  width: 20%;
+  float: left;
+  position: fixed;
+  height: 100vh;
+}
+
+.main{
+  padding-top: 15vh;
+  margin-left: 25%;
+}
+
+.avatar{
+  width: 8em;
+}
+
+ul, li{
+  margin: 0;
+  padding: 0;
+  display: inline;
+  list-style: none;
+}
+
+.social-media{
+  margin-top: 1em;
+}
+
+.social-media-icon{
+  padding: 0.5em;
+  background-color: $grey-2-5;
+  color: white;
+  border-radius: 6px;
+  display: inline-block;
+
+  &:hover{
+    background-color: black;
+    transition: 0.2s;
+  }
+}
