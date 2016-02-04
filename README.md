@@ -21,3 +21,7 @@ Also, I should add that this project (right now) has no right being a full fledg
 1. Download the zip.
 2. Unpack it.
 3. `cd` into it, then run `grunt serve` to preview.
+
+## How to deploy
+1. Use `grunt build` to minify, and create a dist directory.
+2. Then, `grunt buildcontrol:pages` to push to gh-pages branch. (Check out [grunt-build-control](https://github.com/robwierzbowski/grunt-build-control))
