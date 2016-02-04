@@ -16,10 +16,9 @@ angular.module('desktopApp')
         ];
 
         var vm = this;
+        vm.profile = info;
 
         // Gets current local time
         // vm.time = new Date().toLocaleString();
 
-        vm.profile = info;
-        console.log(info);
     }]);
