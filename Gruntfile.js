@@ -456,7 +456,33 @@ module.exports = function (grunt) {
         configFile: 'test/karma.conf.js',
         singleRun: true
       }
-    }
+    },
+
+    buildcontrol: {
+        options: {
+          dir: 'dist',
+          commit: true,
+          push: true,
+          message: 'Built %sourceName% from commit %sourceCommit% on branch %sourceBranch%'
+        },
+        pages: {
+          options: {
+            remote: 'git@github.com:jonsamp/portfolio.git',
+            branch: 'gh-pages'
+          }
+        },
+        local: {
+          options: {
+            remote: '../',
+            branch: 'build'
+          }
+        }
+      }
+
+
+
+
+
   });
 
 
