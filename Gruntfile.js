@@ -25,6 +25,8 @@ module.exports = function (grunt) {
     dist: 'dist'
   };
 
+  grunt.loadNpmTasks('grunt-build-control');
+
   // Define the configuration for all the tasks
   grunt.initConfig({
 
