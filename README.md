@@ -1,5 +1,6 @@
 # My Portfolio
 
+_Check out the live version [here](http://jonsamp.github.io/portfolio/#/)._
 This is my portfolio. It is really simple, because I think portfolios *should* be simple. I could make a lot of fancy transitions, with big photos of work I've done, but I've decided not to, at least for now. The goal right now is to show you what matters, which is where I work, and a project that I am proud of named Givvy. I would show you pictures of Givvy, but I'd rather just let you check it out on the open web.
 
 I also included a link to my Github, and my Medium. You can see my writing in code and my writing outside of code. Both are important.
@@ -12,7 +13,7 @@ This is made with AngularJS, one of my favorite frameworks to work with. I also 
 
 Also, I should add that this project (right now) has no right being a full fledged AngularJS app. Right now, it's like I bought a Ferrari to drive around my cul-de-sac. I *could* have made this with only HTML and CSS, but I went with AngularJS for a few reasons:
 
-1. The problem with Portfolio's is that they go out of date quickly, and remembering to update them is hard. —AngularJS can help here, as I can abstract out the data (as you can see I have in the `info.js` service), and edit it from afar, without mucking through the HTML every time.
+1. The problem with Portfolio's is that they go out of date quickly, and remembering to update them is hard. —AngularJS can help here, as I can abstract out the data (as you can see I have in the `info.js` service. MVC for the win!), and edit it from afar, without mucking through the HTML every time.
 2. I want to teach people how to use AngularJS, so this little thing will one day become a fun tutorial for someone looking to learn AngularJS, and to showcase their work.
 3. And I just love AngularJS :heart_eyes:.
 
