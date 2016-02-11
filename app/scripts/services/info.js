@@ -27,7 +27,7 @@ angular.module('desktopApp')
                 "url": "https://github.com/jonsamp"
             }, {
                 "name": "Medium",
-                "icon": "fa-rss",
+                "icon": "fa-medium",
                 "url": "https://medium.com/@jonsamp"
             }]
         };
