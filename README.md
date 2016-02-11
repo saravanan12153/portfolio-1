@@ -1,6 +1,7 @@
 # My Portfolio
 
-_Check out the live version [here](http://jonsamp.github.io/portfolio/#/)._
+_Check out my portfolio [here](http://jonsamp.github.io/portfolio/#/)._
+
 This is my portfolio. It is really simple, because I think portfolios *should* be simple. I could make a lot of fancy transitions, with big photos of work I've done, but I've decided not to, at least for now. The goal right now is to show you what matters, which is where I work, and a project that I am proud of named Givvy. I would show you pictures of Givvy, but I'd rather just let you check it out on the open web.
 
 I also included a link to my Github, and my Medium. You can see my writing in code and my writing outside of code. Both are important.
