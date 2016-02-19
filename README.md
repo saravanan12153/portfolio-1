@@ -6,7 +6,7 @@ This is my portfolio. It is really simple, because I think portfolios *should* b
 
 I also included a link to my Github, and my Medium. You can see my writing in code and my writing outside of code. Both are important.
 
-I want to add more to my portfolio in the future, since right now it is more like a business card. Actually, there isn't even a phone number or email on there. So, it's more like a business card that's been ripped in half. I know you aren't worried, but if you are, don't. I have plans to put more on my portfolio in the future. Looking at this thing straight on, it's pretty barbones.
+I want to add more to my portfolio in the future, since right now it is more like a business card. Actually, there isn't even a phone number or email on there. So, it's more like a business card that's been ripped in half. I know you aren't worried, but if you are, don't. I have plans to put more on my portfolio in the future. Looking at this thing straight on, it's pretty bare bones.
 
 ## Technologies
 This is made with AngularJS, one of my favorite frameworks to work with. I also generated most of the project with Yeoman's [yo angular generator](https://github.com/yeoman/generator-angular). If you haven't checked out Yeoman, it teleports you to the fun part of coding.
