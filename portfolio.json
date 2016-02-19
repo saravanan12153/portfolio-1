@@ -10,10 +10,13 @@
         "position": "Pro Advisor @",
         "organization": "Codecademy",
         "url": "https://www.codecademy.com/"
+    }],
+    "projects": [{
+        "name": "Givvy",
+        "url": "http://givvyapp.com"
     }, {
-        "position": "Maker of",
-        "organization": "Givvy",
-        "url": "http://givvyapp.com/"
+        "name": "TacoTime",
+        "url": "http://people.ku.edu/~sampjon/tacotime/#/"
     }],
     "socialIcons": [{
         "name": "Github",
