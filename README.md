@@ -18,7 +18,7 @@ Lastly, this app is built and served with [Grunt](http://gruntjs.com).
 ## Thoughts
 I should add that this project (right now) has no business being a full fledged AngularJS/Firebase app. Right now, it's like I bought a Ferrari to drive around my cul-de-sac. I *could* have made this with only HTML and CSS, but I went with AngularJS for a few reasons:
 
-1. The problem with Portfolio's is that they go out of date quickly, and remembering to update them is hard. —AngularJS can help here, as I can abstract out the data (as you can see, I have the portfolio.json, which is a replica of what is stored in a Firebase db), and edit it from afar, without mucking through the HTML every time.
+1. The problem with portfolios is that they go out of date quickly, and remembering to update them is hard. —AngularJS can help here, as I can abstract out the data (as you can see, I have the portfolio.json, which is a replica of what is stored in a Firebase db), and edit it from afar, without mucking through the HTML every time.
 2. I want to teach people how to use AngularJS, so this little thing will one day become a fun tutorial for someone looking to learn AngularJS, and to showcase their work.
 3. And I just love AngularJS :heart_eyes:.
 
