@@ -22,9 +22,6 @@ $light-blue: #59a1c9;
 $mint: #39d1b4;
 $premium-mint: #34b3a0;
 $red: #f65a5b;
-.grey-gradient {
-    background-image: linear-gradient(28deg, #859398 0%, #283048 100%);
-}
 
 .browsehappy {
     margin: 0.2em 0;
@@ -35,7 +32,8 @@ $red: #f65a5b;
 
 body {
     padding: 0;
-    font-family: $font-family
+    font-family: $font-family;
+    text-align: center;
 }
 
 a {
@@ -47,20 +45,26 @@ a {
     }
 }
 
-.gradient {
-    width: 20%;
-    float: left;
-    position: fixed;
-    height: 100vh;
-}
-
 .main {
-    padding-top: 15vh;
-    margin-left: 25%;
+    padding-top: 10vh;
+    padding-bottom: 20vh;
 }
 
 .avatar {
-    width: 8em;
+    height: 65vh;
+    box-shadow: 0em 1em 2em rgba(0,0,0,0.3);
+    margin-bottom: 2em;
+}
+
+.location{
+  background-color: white;
+  border: 1px solid $grey-2-5;
+  padding: 0.5em 2em;
+  border-radius: 0;
+  color: $grey-2-5;
+  display: inline-block;
+  border-radius: 2em;
+  margin: 0.5em auto 1em auto;
 }
 
 .fa-map-pin {
@@ -93,14 +97,5 @@ span.project:last-child::before {
     &:hover {
         background-color: black;
         transition: 0.2s;
-    }
-}
-
-@media (max-width: 500px) {
-    .gradient {
-        width: 5%;
-    }
-    .main {
-        margin-left: 15%;
     }
 }

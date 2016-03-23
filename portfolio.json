@@ -26,5 +26,9 @@
         "name": "Medium",
         "icon": "fa-medium",
         "url": "https://medium.com/@jonsamp"
+    }, {
+        "name": "Twitter",
+        "icon": "fa-twitter",
+        "url": "https://twitter.com/jonsamp"
     }]
 }
