@@ -1,5 +1,5 @@
 <div ng-controller="MainCtrl as vm" class="main">
-  <img class="avatar" ng-src="{{vm.profile.avatar}}" alt="Picture of Jon Samp in San Fransisco, next to Lombard St.">
+  <img class="avatar" ng-src="{{vm.profile.avatar}}">
   <h1>{{vm.profile.name}}</h1>
   <span class="location"><i class="fa fa-map-pin"></i> {{vm.profile.location}}</span>
   <div ng-repeat="job in vm.profile.work">
