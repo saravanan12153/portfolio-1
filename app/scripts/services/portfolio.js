@@ -134,7 +134,7 @@ angular.module('desktopApp')
                     }, {
                         "id": 1166,
                         "class": "misc",
-                        "description": "Charted Alpha Tau Omega."
+                        "description": "Chartered Alpha Tau Omega."
                     }, {
                         "id": 917,
                         "class": "misc",
