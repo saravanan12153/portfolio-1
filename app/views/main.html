@@ -2,7 +2,6 @@
 
     <img class="avatar" ng-src="{{vm.profile.avatar}}">
     <h1>{{vm.profile.name}}</h1>
-    <span class="location"><i class="fa fa-map-pin"></i> {{vm.profile.location}}</span>
     <div ng-repeat="job in vm.profile.work">
         <p>{{job.position}} <a href="{{job.url}}" target="new">{{job.organization}}</a></p>
         </p>

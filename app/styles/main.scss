@@ -22,6 +22,7 @@ $red: #f65a5b;
 $yellow: #f6ea8c;
 $orange: lighten(#f26d5b, 10%);
 $light-orange: #f9cdad;
+$purple: #D1B6E1;
 .browsehappy {
     margin: 0.2em 0;
     background: #ccc;
@@ -40,6 +41,9 @@ a {
         text-decoration: none;
         transition: 0.2s;
     }
+}
+h1{
+    margin-bottom: 0.75em;
 }
 .main {
     padding-top: 10vh;
@@ -98,12 +102,24 @@ span.project:last-child::before {
     background-color: $grey-6;
     color: $grey-1;
     text-align: center;
-    max-width: 10em;
+    max-width: 15em;
 }
 
 .all-weeks{
     max-width: 1103px;
     margin: auto;
+}
+
+@media (max-width: 1103px){
+    .all-weeks{
+        max-width: 664px;
+    }
+}
+
+@media (max-width: 664px){
+    .all-weeks{
+        max-width: 80vw;
+    }
 }
 
 .week-wrapper{
@@ -150,7 +166,12 @@ span.project:last-child::before {
 }
 
 .projects{
-    background-color: lighten($light-blue, 25%);
+    background-color: lighten($light-blue, 20%);
+    border: 1px solid #ccc;
+}
+
+.misc{
+    background-color: $purple;
     border: 1px solid #ccc;
 }
 

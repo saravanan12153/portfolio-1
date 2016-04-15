@@ -1,6 +1,6 @@
 
 <div>
-    {{ week.date | date }}
+    {{ week.date | date:'MMM yyyy' }}
     <span ng-if="vm.mathFloor($index / 52) === 0">
         <br />I was born!
     </span>
