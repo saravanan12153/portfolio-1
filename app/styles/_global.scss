@@ -1,0 +1,30 @@
+* {
+    transition: 0.2s;
+}
+
+body {
+    padding: 0;
+    font-family: $font-family;
+    text-align: center;
+    margin: auto;
+}
+a {
+    color: $grey-4;
+    &:hover {
+        color: black;
+        text-decoration: none;
+        transition: 0.2s;
+    }
+}
+h1{
+    margin-bottom: 0.75em;
+}
+.main {
+    padding-top: 3em;
+    padding-bottom: 20vh;
+}
+
+.content-container{
+    max-width: 1103px;
+    margin: 0 auto;
+}

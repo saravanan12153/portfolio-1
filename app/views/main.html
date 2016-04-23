@@ -1,32 +1,25 @@
 <div ng-controller="MainCtrl as vm" class="main">
 
-    <img class="avatar" ng-src="{{vm.profile.avatar}}">
-    <h1>{{vm.profile.name}}</h1>
-    <div ng-repeat="job in vm.profile.work">
-        <p>{{job.position}} <a href="{{job.url}}" target="new">{{job.organization}}</a></p>
-        </p>
-    </div>
-    <p>Maker of
-        <span ng-repeat="project in vm.profile.projects" class="project">
-        <a ng-href="{{ project.url }}" target="new">{{ project.name }}</a>
-    </span>
-        <div class="social-media">
-            <ul>
-                <li ng-repeat="key in vm.profile.socialIcons">
-                    <a href="{{key.url}}" target="new"><i class="fa fa-lg social-media-icon" ng-class="key.icon"></i></a>
-                </li>
-            </ul>
-        </div>
+    <div class="content-container">
+        <nav>
+            <div class="left-nav">
+                <img ng-src="{{vm.profile.avatar}}" />
+                <span class="name">Jon Samp</span>
+            </div>
 
-
-    <h4>Life in weeks</h4>
-
-    <div class="all-weeks">
-        <div ng-repeat="week in vm.weeks" class="week-wrapper">
-            <div class="sq" ng-class="{{week.class}}" uib-popover-template="week.template" popover-trigger="mouseenter"></div>
-        </div>
+            <div class="social-media">
+                <ul>
+                    <li ng-repeat="key in vm.profile.socialIcons">
+                        <a href="{{key.url}}" target="new"><i class="fa fa-lg social-media-icon" ng-class="key.icon"></i></a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
     </div>
 
-    <div class="clearfix"></div>
-
+    <div class="life-week-container">
+        <div class="content-container">
+            <life-week weeks=vm.weeks></life-week>
+        </div>
+    </div>
 </div>

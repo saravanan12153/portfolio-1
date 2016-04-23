@@ -1,7 +1,7 @@
 angular.module('desktopApp')
     .service('portfolioData', function() {
         return {
-            "avatar": "images/Jon_Samp_SF_tall.jpg",
+            "avatar": "images/Jon_Samp_SF_zoomed.jpg",
             "name": "Jon Samp",
             "location": "Chicago, IL",
             "work": [{

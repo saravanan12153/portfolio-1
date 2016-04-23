@@ -1,0 +1,101 @@
+.life-week-container{
+    background-color: black;
+    padding-bottom: 16em;
+}
+
+.popover.top > .arrow:after {
+    border-top-color: $grey-6;
+}
+
+.popover{
+    background-color: $grey-6;
+    color: $grey-1;
+    text-align: center;
+    max-width: 15em;
+    font-family: $font-family;
+}
+
+.all-weeks{
+    margin: auto;
+}
+
+@media (max-width: 1103px){
+    .all-weeks{
+        max-width: 664px;
+    }
+}
+
+@media (max-width: 664px){
+    .all-weeks{
+        max-width: 80vw;
+    }
+}
+
+
+.header-icon{
+    margin-bottom: 4em;
+    padding-top: 4em;
+}
+.week-wrapper{
+    display: block;
+    float: left;
+}
+
+.sq{
+    height: 19px;
+    width: 19px;
+    margin: 1px;
+}
+
+.past{
+    background-color: $past-grey;
+}
+
+.thisWeek{
+    background-color: white;
+}
+
+.future{
+    background-color: $future-grey;
+}
+
+.life-event{
+    background-color: $yellow;
+}
+
+.school{
+    background-color: $orange;
+}
+
+.career{
+    background-color: $green;
+}
+
+.world-event{
+    background-color: $border-grey;
+    border: 1px solid $border-grey;
+}
+
+.projects{
+    background-color: $mint;
+}
+
+.misc{
+    background-color: $red;
+}
+
+.after-life{
+    background-color: $past-grey;
+}
+
+.birthday{
+    border: 1px solid darken($border-grey, 15%);
+
+    &.future{
+        border: 1px dashed darken($border-grey, 15%);
+    }
+
+    &.life-expectancy{
+        background-color: $light-blue;
+    }
+}
