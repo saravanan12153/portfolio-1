@@ -1,0 +1,25 @@
+.instagram{
+    background-color: $grey-1;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 6em 0 9em 0;
+
+
+    .photo{
+
+        margin: 0 3vw;
+        padding: 1em;
+        background-color: white;
+        box-shadow: 0 0.5em 1em rgba(0,0,0,0.1);
+
+        img{
+            max-width: 20vw;
+        }
+
+        p{
+            margin-top: 1em;
+            text-align: left;
+        }
+    }
+}

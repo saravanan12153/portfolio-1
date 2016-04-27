@@ -13,22 +13,18 @@ angular.module('desktopApp')
         var vm = this;
         vm.profile = portfolioData;
 
+        instagram.then(function(data){
+            var response = data.data.data;
 
-        // TODO: Figure out how to get this data back in a more promise-y way.
-        // right now the data is coming back really slow. Too slow.
+            vm.instagramPhotos = [];
 
-        // instagram.getSelfFeed().success(function(data){
-        //     var response = data.data.data;
-        //
-        //     vm.instagramPhotos = [];
-        //
-        //     response.forEach(function(photo){
-        //         vm.instagramPhotos.push({
-        //             'image': photo.images.standard_resolution.url,
-        //             'caption': photo.caption.text
-        //         });
-        //     });
-        // });
+            response.forEach(function(photo){
+                vm.instagramPhotos.push({
+                    'image': photo.images.standard_resolution.url,
+                    'caption': photo.caption.text
+                });
+            });
+        });
 
         // TODO: Figure out how to put the lifeWeeks logic in its own controller
 

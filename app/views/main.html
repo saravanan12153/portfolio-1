@@ -17,11 +17,15 @@
         </nav>
     </div>
 
-    <div ng-repeat="photo in vm.instagramPhotos">
-        <img ng-src="{{photo.image}}" />
-        <p>
-            {{ photo.caption }}
-        </p>
+    <div class="instagram">
+        <div ng-repeat="photo in vm.instagramPhotos">
+            <div class="photo">
+                <img ng-src="{{photo.image}}" />
+                <p>
+                    {{ photo.caption }}
+                </p>
+            </div>
+        </div>
     </div>
 
     <div class="life-week-container">
