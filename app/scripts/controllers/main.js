@@ -8,10 +8,30 @@
  * Controller of the desktopApp
  */
 angular.module('desktopApp')
-    .controller('MainCtrl', ['portfolioData', function(portfolioData) {
+    .controller('MainCtrl', ['portfolioData', 'instagram', function(portfolioData, instagram) {
 
         var vm = this;
         vm.profile = portfolioData;
+
+
+        // TODO: Figure out how to get this data back in a more promise-y way.
+        // right now the data is coming back really slow. Too slow.
+
+        // instagram.getSelfFeed().success(function(data){
+        //     var response = data.data.data;
+        //
+        //     vm.instagramPhotos = [];
+        //
+        //     response.forEach(function(photo){
+        //         vm.instagramPhotos.push({
+        //             'image': photo.images.standard_resolution.url,
+        //             'caption': photo.caption.text
+        //         });
+        //     });
+        // });
+
+        // TODO: Figure out how to put the lifeWeeks logic in its own controller
+
         var lifeWeeks = portfolioData.lifeWeeks;
 
         // Array to put final object in
@@ -22,7 +42,6 @@ angular.module('desktopApp')
         var weekLength = 6.048e+8;
         var yearLength = 31449600000;
         var endDate = Date.UTC(2089, 8, 19);
-        vm.mathFloor = Math.floor;
 
         // List every week
         var weeksArray = [];
@@ -72,17 +91,17 @@ angular.module('desktopApp')
             vm.weeks[lifeWeeks.birthdayWeeks[i]].template = 'views/templates/birthday.tpl.html';
         }
 
+        // Adds color to weeks after life expectancy;
+        for (var i = 4123; i < vm.weeks.length; i++) {
+            vm.weeks[i].class.push('after-life');
+        }
+
         // find my current age
         var birthDate = new Date(1989, 9, 21);
         var now = new Date();
         var days = Math.floor((now - birthDate) / 86400000);
         var myAge = days / 365.25;
         vm.myAge = Math.floor(myAge);
-
-        // Adds color to weeks after life expectancy;
-        for (var i = 4123; i < vm.weeks.length; i++) {
-            vm.weeks[i].class.push('after-life');
-        }
 
         // Adds events to week calendar from lifeWeeks object
         lifeWeeks.events.map(function(event) {

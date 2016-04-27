@@ -17,9 +17,16 @@
         </nav>
     </div>
 
+    <div ng-repeat="photo in vm.instagramPhotos">
+        <img ng-src="{{photo.image}}" />
+        <p>
+            {{ photo.caption }}
+        </p>
+    </div>
+
     <div class="life-week-container">
         <div class="content-container">
-            <life-week weeks=vm.weeks></life-week>
+            <life-week weeks=vm.weeks my-age=vm.myAge></life-week>
         </div>
     </div>
 </div>

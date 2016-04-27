@@ -4,12 +4,12 @@
 }
 
 .popover.top > .arrow:after {
-    border-top-color: $grey-6;
+    border-top-color: $grey-1;
 }
 
 .popover{
-    background-color: $grey-6;
-    color: $grey-1;
+    background-color: $grey-1;
+    color: $grey-6;
     text-align: center;
     max-width: 15em;
     font-family: $font-family;
@@ -52,7 +52,7 @@
 }
 
 .thisWeek{
-    background-color: white;
+    background-color: $grey-1;
 }
 
 .future{

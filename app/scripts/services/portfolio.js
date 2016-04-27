@@ -88,10 +88,6 @@ angular.module('desktopApp')
                         "class": "career",
                         "description": "First day as a developer at RightPoint."
                     }, {
-                        "id": 1364,
-                        "class": "career",
-                        "description": "First day as a developer at RightPoint."
-                    }, {
                         "id": 537,
                         "class": "world-event",
                         "description": "Y2K happened."
@@ -118,7 +114,7 @@ angular.module('desktopApp')
                     }, {
                         "id": 1333,
                         "class": "projects",
-                        "description": "Finished developer bootcamp. Launched TacoTime."
+                        "description": "Graduated from Codecademy Labs Developer Bootcamp. Made TacoTime."
                     }, {
                         "id": 1372,
                         "class": "projects",

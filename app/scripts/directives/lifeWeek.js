@@ -3,8 +3,12 @@ angular.module('desktopApp')
         return {
         restrict: 'E',
         scope: {
-            weeks: "="
+            weeks: "=",
+            myAge: "="
         },
-        templateUrl: 'scripts/directives/lifeWeek.html'
+        templateUrl: 'scripts/directives/lifeWeek.html',
+        link: function (scope) {
+            scope.mathFloor = Math.floor;
+        }
     };
     });

@@ -1,14 +1,14 @@
 
 <div>
     {{ week.date | date:'MMM yyyy' }}
-    <span ng-if="vm.mathFloor($index / 52) === 0">
+    <span ng-if="$index === 0">
         <br />I was born!
     </span>
-    <span ng-if="vm.mathFloor($index / 52) !== 0 && vm.mathFloor($index / 52) <= vm.myAge">
-        <br />I turned {{ vm.mathFloor($index / 52) }}.
+    <span ng-if="mathFloor($index / 52) !== 0 && mathFloor($index / 52) <= myAge">
+        <br />I turned {{ ($index / 52) | number: 0 }}.
     </span>
-    <span ng-if="vm.mathFloor($index / 52) !== 0 && vm.mathFloor($index / 52) > vm.myAge">
-        <br />I will turn {{ vm.mathFloor($index / 52) }}.
+    <span ng-if="mathFloor($index / 52) !== 0 && mathFloor($index / 52) > myAge">
+        <br />I will turn {{ ($index / 52) | number: 0}}.
         <span ng-if="week.description">
         <br />{{ week.description }}
         </span>
