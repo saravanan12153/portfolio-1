@@ -13,6 +13,16 @@ angular.module('desktopApp')
         var vm = this;
         vm.profile = portfolioData;
 
+        // Adds slight rotation to photos object
+        var rotateDegrees = [ -1.5, -1, 1, 1.5 ];
+
+        function randomNumber() {
+            var result =  Math.floor(Math.random() * rotateDegrees.length);
+            console.log("result: ", rotateDegrees[result]);
+            return rotateDegrees[result];
+        }
+
+        // Get photos from instagram API
         instagram.then(function(data){
             var response = data.data.data;
 
@@ -21,10 +31,18 @@ angular.module('desktopApp')
             response.forEach(function(photo){
                 vm.instagramPhotos.push({
                     'image': photo.images.standard_resolution.url,
-                    'caption': photo.caption.text
+                    'caption': photo.caption.text,
+                    'rotate': randomNumber(),
+                    'link': photo.link
                 });
             });
+
+            console.log(vm.instagramPhotos);
         });
+
+
+
+
 
         // TODO: Figure out how to put the lifeWeeks logic in its own controller
 

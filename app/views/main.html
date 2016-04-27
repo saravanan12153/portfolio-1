@@ -19,12 +19,14 @@
 
     <div class="instagram">
         <div ng-repeat="photo in vm.instagramPhotos">
-            <div class="photo">
-                <img ng-src="{{photo.image}}" />
-                <p>
-                    {{ photo.caption }}
-                </p>
-            </div>
+            <a ng-href={{photo.link}} target="new">
+                <div class="photo" style="transform: rotate( {{ photo.rotate }}deg);">
+                    <img ng-src="{{photo.image}}" />
+                    <p>
+                        {{ photo.caption }}
+                    </p>
+                </div>
+            </a>
         </div>
     </div>
 
