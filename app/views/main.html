@@ -4,7 +4,7 @@
         <nav>
             <div class="left-nav">
                 <img ng-src="{{vm.profile.avatar}}" />
-                <span class="name">Jon Samp</span>
+                <span class="name" ng-if="windowWidth >= vm.breakPoint ">Jon Samp</span>
             </div>
 
             <div class="social-media">
@@ -45,7 +45,7 @@
 
     <div class="life-week-container">
         <div class="content-container">
-            <life-week weeks=vm.weeks my-age=vm.myAge></life-week>
+            <life-week weeks=vm.weeks my-age=vm.myAge window-width=windowWidth></life-week>
         </div>
     </div>
 </div>

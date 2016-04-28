@@ -3,8 +3,7 @@
     <!-- <object type="image/svg+xml" data="images/gem.svg" class=""></object> -->
 </div>
 
-<div class="all-weeks">
-
+<div class="all-weeks" ng-if="windowWidth >= 767">
     <div ng-repeat="week in weeks" class="week-wrapper">
         <div ng-if="week.description">
             <div class="sq" ng-class="{{week.class}}" uib-popover-template="week.template" popover-trigger="mouseenter"></div>
@@ -12,6 +11,19 @@
         <div ng-if="!week.description">
             <div class="sq" ng-class="{{week.class}}"></div>
         </div>
+    </div>
+</div>
+
+
+<div class="all-weeks" ng-if="windowWidth < 767">
+    <div ng-repeat="week in weeks" class="week-wrapper">
+        <div ng-if="week.template !== 'views/templates/birthday.tpl.html' && week.description">
+            <div style="color: white">
+                Week: {{ week.date | date: 'MMM yyyy' }}
+                Description: {{ week.description }}
+            </div>
+        </div>
+    </div>
 </div>
 
 <div class="clearfix"></div>

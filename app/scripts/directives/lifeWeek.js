@@ -4,7 +4,8 @@ angular.module('desktopApp')
         restrict: 'E',
         scope: {
             weeks: "=",
-            myAge: "="
+            myAge: "=",
+            windowWidth: "="
         },
         templateUrl: 'scripts/directives/lifeWeek.html',
         link: function (scope) {
