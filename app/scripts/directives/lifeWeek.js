@@ -5,7 +5,8 @@ angular.module('desktopApp')
         scope: {
             weeks: "=",
             myAge: "=",
-            windowWidth: "="
+            windowWidth: "=",
+            breakPoint: "="
         },
         templateUrl: 'scripts/directives/lifeWeek.html',
         link: function (scope) {

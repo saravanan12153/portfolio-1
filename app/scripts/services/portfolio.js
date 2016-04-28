@@ -123,18 +123,22 @@ angular.module('desktopApp')
                         "id": 1295,
                         "class": "misc",
                         "description": "Ran my first half marathon."
+
                     }, {
                         "id": 1082,
                         "class": "misc",
                         "description": "Studied abroad in Florence, Italy."
+
                     }, {
                         "id": 1166,
                         "class": "misc",
                         "description": "Chartered Alpha Tau Omega."
+
                     }, {
                         "id": 917,
                         "class": "misc",
                         "description": "First time on a plane. Went to National History Day in Washington DC."
+
                     }
                 ]
             }

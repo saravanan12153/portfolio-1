@@ -17,8 +17,12 @@
         </nav>
     </div>
 
-    <div class="instagram">
+    <div class="instagram" ng-controller="InstagramCtrl as vm">
         <div class="content-container">
+            <div class="header">
+                <p>Photography:</p>
+            </div>
+            <div class="instagram-container">
             <div ng-if="windowWidth >= vm.breakPoint" ng-repeat="photo in vm.instagramPhotos">
                 <a ng-href={{photo.link}} target="new">
                     <div class="photo" style="transform: rotate( {{ photo.rotate }}deg);">
@@ -42,10 +46,11 @@
             </div>
         </div>
     </div>
+    </div>
 
-    <div class="life-week-container">
+    <div class="life-week-container" ng-controller="LifeWeek as vm">
         <div class="content-container">
-            <life-week weeks=vm.weeks my-age=vm.myAge window-width=windowWidth></life-week>
+            <life-week weeks=vm.weeks my-age=vm.myAge window-width=windowWidth break-point=vm.breakPoint></life-week>
         </div>
     </div>
 </div>

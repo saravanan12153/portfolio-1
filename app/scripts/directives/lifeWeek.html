@@ -1,10 +1,10 @@
 
-<div class="header-icon">
-    <!-- <object type="image/svg+xml" data="images/gem.svg" class=""></object> -->
+<div class="header">
+    <p class='pull-left' style="color: white">Milestones:</p>
 </div>
 
-<div class="all-weeks" ng-if="windowWidth >= 767">
-    <div ng-repeat="week in weeks" class="week-wrapper">
+<div class="all-weeks" ng-if="windowWidth >= breakPoint">
+    <div ng-repeat="week in weeks track by week.id" class="week-wrapper">
         <div ng-if="week.description">
             <div class="sq" ng-class="{{week.class}}" uib-popover-template="week.template" popover-trigger="mouseenter"></div>
         </div>
@@ -13,17 +13,14 @@
         </div>
     </div>
 </div>
+<div class="clearfix"></div>
 
 
-<div class="all-weeks" ng-if="windowWidth < 767">
-    <div ng-repeat="week in weeks" class="week-wrapper">
-        <div ng-if="week.template !== 'views/templates/birthday.tpl.html' && week.description">
-            <div style="color: white">
-                Week: {{ week.date | date: 'MMM yyyy' }}
-                Description: {{ week.description }}
-            </div>
+<div class="small-weeks" ng-if="windowWidth < breakPoint">
+    <div ng-repeat="week in weeks | filter: { notableEvent: true} | orderBy: id | limitTo: -5 track by week.id" >
+        <div class="week-entry">
+            <span class="date {{week.class[week.class.length - 1]}}">{{ week.date | date: 'MMMM yyyy' }}</span><br />
+            <span class="description">{{ week.description }}</span>
         </div>
     </div>
 </div>
-
-<div class="clearfix"></div>
