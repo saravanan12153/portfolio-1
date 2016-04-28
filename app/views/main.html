@@ -17,35 +17,44 @@
         </nav>
     </div>
 
+    <div class="content-container ">
+        <div class="about-me">
+            <h3>
+                I'm a front-end developer in Chicago.
+                I like photography, love coffee, and I am thinking about getting a dog.
+            </h3>
+        </div>
+    </div>
+
     <div class="instagram" ng-controller="InstagramCtrl as vm">
         <div class="content-container">
             <div class="header">
                 <p>Photography:</p>
             </div>
             <div class="instagram-container">
-            <div ng-if="windowWidth >= vm.breakPoint" ng-repeat="photo in vm.instagramPhotos">
-                <a ng-href={{photo.link}} target="new">
-                    <div class="photo" style="transform: rotate( {{ photo.rotate }}deg);">
-                        <img ng-src="{{photo.image}}" />
-                        <p>
-                            {{ photo.created_time | date: 'MMM dd, yyyy' }}: {{ photo.caption }}
-                        </p>
-                    </div>
-                </a>
-            </div>
+                <div ng-if="windowWidth >= vm.breakPoint" ng-repeat="photo in vm.instagramPhotos">
+                    <a ng-href={{photo.link}} target="new">
+                        <div class="photo" style="transform: rotate( {{ photo.rotate }}deg);">
+                            <img ng-src="{{photo.image}}" />
+                            <p>
+                                {{ photo.created_time | date: 'MMM dd, yyyy' }}: {{ photo.caption }}
+                            </p>
+                        </div>
+                    </a>
+                </div>
 
-            <div ng-if="windowWidth < vm.breakPoint" ng-repeat="photo in vm.instagramPhotos | limitTo: 1">
-                <a ng-href={{photo.link}} target="new">
-                    <div class="photo" style="transform: rotate( {{ photo.rotate }}deg);">
-                        <img ng-src="{{photo.image}}" />
-                        <p>
-                            {{ photo.created_time | date: 'MMM dd, yyyy' }}: {{ photo.caption }}
-                        </p>
-                    </div>
-                </a>
+                <div ng-if="windowWidth < vm.breakPoint" ng-repeat="photo in vm.instagramPhotos | limitTo: 1">
+                    <a ng-href={{photo.link}} target="new">
+                        <div class="photo" style="transform: rotate( {{ photo.rotate }}deg);">
+                            <img ng-src="{{photo.image}}" />
+                            <p>
+                                {{ photo.created_time | date: 'MMM dd, yyyy' }}: {{ photo.caption }}
+                            </p>
+                        </div>
+                    </a>
+                </div>
             </div>
         </div>
-    </div>
     </div>
 
     <div class="life-week-container" ng-controller="LifeWeek as vm">
