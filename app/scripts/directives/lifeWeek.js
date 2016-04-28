@@ -8,7 +8,7 @@ angular.module('desktopApp')
             windowWidth: "=",
             breakPoint: "="
         },
-        templateUrl: 'scripts/directives/lifeWeek.html',
+        templateUrl: 'views/lifeWeek.html',
         link: function (scope) {
             scope.mathFloor = Math.floor;
         }
