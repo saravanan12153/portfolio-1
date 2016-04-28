@@ -8,17 +8,19 @@
  * Controller of the desktopApp
  */
 angular.module('desktopApp')
-    .controller('MainCtrl', ['portfolioData', 'instagram', function(portfolioData, instagram) {
+    .controller('MainCtrl', ['portfolioData', 'instagram', '$scope', function(portfolioData, instagram, $scope) {
 
         var vm = this;
         vm.profile = portfolioData;
+
+        vm.breakPoint = 767;
+
 
         // Adds slight rotation to photos object
         var rotateDegrees = [ -1.5, -1, 1, 1.5 ];
 
         function randomNumber() {
             var result =  Math.floor(Math.random() * rotateDegrees.length);
-            console.log("result: ", rotateDegrees[result]);
             return rotateDegrees[result];
         }
 
@@ -33,11 +35,10 @@ angular.module('desktopApp')
                     'image': photo.images.standard_resolution.url,
                     'caption': photo.caption.text,
                     'rotate': randomNumber(),
-                    'link': photo.link
+                    'link': photo.link,
+                    'created_time': (photo.created_time * 1000)
                 });
             });
-
-            console.log(vm.instagramPhotos);
         });
 
 
@@ -103,6 +104,8 @@ angular.module('desktopApp')
             vm.weeks[lifeWeeks.birthdayWeeks[i]].class.push('birthday');
             vm.weeks[lifeWeeks.birthdayWeeks[i]].value = i;
             vm.weeks[lifeWeeks.birthdayWeeks[i]].template = 'views/templates/birthday.tpl.html';
+            vm.weeks[lifeWeeks.birthdayWeeks[i]].description = ' ';
+
         }
 
         // Adds color to weeks after life expectancy;

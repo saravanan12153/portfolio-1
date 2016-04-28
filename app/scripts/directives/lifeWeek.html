@@ -6,8 +6,12 @@
 <div class="all-weeks">
 
     <div ng-repeat="week in weeks" class="week-wrapper">
-        <div class="sq" ng-class="{{week.class}}" uib-popover-template="week.template" popover-trigger="mouseenter"></div>
-    </div>
+        <div ng-if="week.description">
+            <div class="sq" ng-class="{{week.class}}" uib-popover-template="week.template" popover-trigger="mouseenter"></div>
+        </div>
+        <div ng-if="!week.description">
+            <div class="sq" ng-class="{{week.class}}"></div>
+        </div>
 </div>
 
 <div class="clearfix"></div>

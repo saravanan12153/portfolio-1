@@ -25,6 +25,8 @@ h1{
 }
 
 .content-container{
-    max-width: 1103px;
+    max-width: calc(1103px + 4em);
     margin: 0 auto;
+    padding-right: 2em;
+    padding-left: 2em;
 }

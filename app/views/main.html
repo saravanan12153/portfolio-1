@@ -1,4 +1,4 @@
-<div ng-controller="MainCtrl as vm" class="main">
+<div ng-controller="MainCtrl as vm" class="main" resize>
 
     <div class="content-container">
         <nav>
@@ -18,15 +18,28 @@
     </div>
 
     <div class="instagram">
-        <div ng-repeat="photo in vm.instagramPhotos">
-            <a ng-href={{photo.link}} target="new">
-                <div class="photo" style="transform: rotate( {{ photo.rotate }}deg);">
-                    <img ng-src="{{photo.image}}" />
-                    <p>
-                        {{ photo.caption }}
-                    </p>
-                </div>
-            </a>
+        <div class="content-container">
+            <div ng-if="windowWidth >= vm.breakPoint" ng-repeat="photo in vm.instagramPhotos">
+                <a ng-href={{photo.link}} target="new">
+                    <div class="photo" style="transform: rotate( {{ photo.rotate }}deg);">
+                        <img ng-src="{{photo.image}}" />
+                        <p>
+                            {{ photo.created_time | date: 'MMM dd, yyyy' }}: {{ photo.caption }}
+                        </p>
+                    </div>
+                </a>
+            </div>
+
+            <div ng-if="windowWidth < vm.breakPoint" ng-repeat="photo in vm.instagramPhotos | limitTo: 1">
+                <a ng-href={{photo.link}} target="new">
+                    <div class="photo" style="transform: rotate( {{ photo.rotate }}deg);">
+                        <img ng-src="{{photo.image}}" />
+                        <p>
+                            {{ photo.created_time | date: 'MMM dd, yyyy' }}: {{ photo.caption }}
+                        </p>
+                    </div>
+                </a>
+            </div>
         </div>
     </div>
 
