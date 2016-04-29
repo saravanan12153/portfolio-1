@@ -1,0 +1,81 @@
+.responsive{
+    font-family: Oxygen, Helvetica, sans-serif;
+    .measurements{
+        height: 50vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: white;
+
+        .value{
+            margin: 4em;
+            font-family: Source Code Pro, monospace;
+
+            h1{
+                font-size: 7vw;
+            }
+            .px{
+                opacity: 0.6;
+            }
+            p {
+                font-family: Oxygen, Helvetica, sans-serif;
+                text-transform: uppercase;
+                letter-spacing: 0.1em;
+            }
+        }
+    }
+
+    .css{
+        display: flex;
+        background-color: $grey-6;
+        height: 45vh;
+
+
+        .code-snippet{
+            font-family: Source Code Pro, monospace;
+            width: 50%;
+            text-align: left;
+            padding: 2em 3em;
+            color: $grey-1;
+
+            p{
+                font-family: Oxygen, Helvetica, sans-serif;
+                background-color: $grey-5;
+                color: $grey-2;
+                padding: 0.25em 1em;
+                border-radius: 3px;
+                letter-spacing: 0.075em;
+                margin-bottom: 1em;
+            }
+
+            .media {
+                color: $red;
+            }
+
+            .width{
+                color: $yellow;
+            }
+        }
+    }
+
+    .what-is-this{
+        background-color: darken($grey-6, 5%);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 5vh;
+        a{
+            color: lighten($grey_5, 5%);
+            text-decoration: none;
+            border-bottom: 1px dashed lighten($grey-5, 5%);
+            position: relative;
+            top: 0.2em;
+            padding-bottom: 0.25em;
+
+            &:hover{
+                color: $grey-1;
+            }
+        }
+    }
+
+}

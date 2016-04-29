@@ -1,0 +1,39 @@
+<div class="responsive" resize>
+    <div class="measurements" style="background: linear-gradient(to top, rgba({{rgbaColor}}, 1), rgba({{rgbaColor}}, 0.95));">
+        <div class="value">
+            <h1>{{ windowWidth }}<span class="px">px</span></h1>
+            <p>
+                Width
+            </p>
+        </div>
+
+        <div class="value">
+            <h1>{{ windowHeight }}<span class="px">px</span></h1>
+            <p>
+                Height
+            </p>
+        </div>
+    </div>
+
+    <div class="css">
+
+        <div class="code-snippet">
+            <p>
+                {{ windowWidth }}px and thinner
+            </p>
+            <span class="media">@media</span> (max-width: <span class="width">{{ windowWidth }}px</span>){<br /><br /> }
+        </div>
+        <div class="code-snippet">
+            <p>
+                {{ windowWidth }}px and wider
+            </p>
+            <span class="media">@media</span> (min-width: <span class="width">{{ windowWidth }}px</span>){<br /><br /> }
+        </div>
+    </div>
+
+    <div class="what-is-this">
+        <p>
+            <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Media_Queries/Using_media_queries" target="new">Learn more about media queries --></a>
+        </p>
+    </div>
+</div>

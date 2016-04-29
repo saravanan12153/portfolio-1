@@ -13,13 +13,15 @@ angular.module('desktopApp')
                 scope.windowHeight = newValue.h;
                 scope.windowWidth = newValue.w;
 
+                widthInteger = scope.windowWidth.toString().split('');
+                scope.rgbaColor = widthInteger[0] + widthInteger[0] + ", " + widthInteger[1] + widthInteger[1] + ", " + widthInteger[2] + widthInteger[2];
+
                 scope.style = function() {
                     return {
                         'height': (newValue.h - 100) + 'px',
                         'width': (newValue.w - 100) + 'px'
                     };
                 };
-
             }, true);
 
             w.bind('resize', function() {

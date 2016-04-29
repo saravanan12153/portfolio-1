@@ -5,6 +5,8 @@ $fa-font-path: "../bower_components/font-awesome/fonts"; // bower:scss
 // fonts
 @import url(https://fonts.googleapis.com/css?family=Oxygen:400,700);
 @import url(https://fonts.googleapis.com/css?family=Kalam);
+@import url(https://fonts.googleapis.com/css?family=Source+Code+Pro:300);
+
 $font-family: "Kalam", Helvetica, sans-serif; // colors
 
 @import 'colors';
@@ -15,3 +17,4 @@ $font-family: "Kalam", Helvetica, sans-serif; // colors
 @import 'color-picker';
 @import 'instagram';
 @import 'life-week';
+@import 'responsive';

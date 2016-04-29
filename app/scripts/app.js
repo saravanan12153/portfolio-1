@@ -25,6 +25,11 @@ angular
         controller: 'MainCtrl',
         controllerAs: 'vm'
       })
+      .when('/responsive', {
+        templateUrl: 'views/responsive.html',
+        controller: 'ResponsiveCtrl',
+        controllerAs: 'vm'
+      })
       .otherwise({
         redirectTo: '/'
       });
