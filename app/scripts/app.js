@@ -16,9 +16,10 @@ angular
     'ngRoute',
     'ngSanitize',
     'ngTouch',
-    'ui.bootstrap'
+    'ui.bootstrap',
+    'timer'
   ])
-  .config(function ($routeProvider) {
+  .config(['$routeProvider', '$sceDelegateProvider', function ($routeProvider, $sceDelegateProvider) {
     $routeProvider
       .when('/', {
         templateUrl: 'views/main.html',
@@ -33,4 +34,10 @@ angular
       .otherwise({
         redirectTo: '/'
       });
-  });
+
+      $sceDelegateProvider.resourceUrlWhitelist([
+          'self',
+          'https://scontent.cdninstagram.com/**'
+      ]);
+
+  }]);

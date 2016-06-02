@@ -8,7 +8,7 @@
  * Controller of the desktopApp
  */
 angular.module('desktopApp')
-    .controller('InstagramCtrl', ['instagram', function(instagram) {
+    .controller('InstagramCtrl', ['instagram', '$sce', function(instagram, $sce) {
 
         var vm = this;
         vm.breakPoint = 767;
@@ -35,7 +35,8 @@ angular.module('desktopApp')
                     'caption': photo.caption.text,
                     'rotate': randomNumber(),
                     'link': photo.link,
-                    'created_time': (photo.created_time * 1000)
+                    'created_time': (photo.created_time * 1000),
+                    'video': photo.videos === undefined ? '' : photo.videos.standard_resolution.url
                 });
             });
         });

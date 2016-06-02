@@ -35,9 +35,14 @@
                 <div ng-if="windowWidth >= vm.breakPoint" ng-repeat="photo in vm.instagramPhotos">
                     <a ng-href={{photo.link}} target="new">
                         <div class="photo" style="transform: rotate( {{ photo.rotate }}deg);">
-                            <img ng-src="{{photo.image}}" />
+                            <div ng-if="!photo.video">
+                                <img ng-src="{{photo.image}}" />
+                            </div>
+                            <div ng-if="photo.video">
+                                <video autoplay loop src="{{photo.video}}"></video>
+                            </div>
                             <p>
-                                {{ photo.created_time | date: 'MMM dd, yyyy' }}: {{ photo.caption }}
+                                {{ photo.created_time | date: 'MMM dd, yyyy' }}: {{ photo.caption }}<br />
                             </p>
                         </div>
                     </a>
@@ -46,7 +51,12 @@
                 <div ng-if="windowWidth < vm.breakPoint" ng-repeat="photo in vm.instagramPhotos | limitTo: 1">
                     <a ng-href={{photo.link}} target="new">
                         <div class="photo" style="transform: rotate( {{ photo.rotate }}deg);">
-                            <img ng-src="{{photo.image}}" />
+                            <div ng-if="!photo.video">
+                                <img ng-src="{{photo.image}}" />
+                            </div>
+                            <div ng-if="photo.video">
+                                <video autoplay loop src="{{photo.video}}"></video>
+                            </div>
                             <p>
                                 {{ photo.created_time | date: 'MMM dd, yyyy' }}: {{ photo.caption }}
                             </p>
