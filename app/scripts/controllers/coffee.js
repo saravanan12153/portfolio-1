@@ -35,7 +35,7 @@ angular.module('desktopApp')
         })
 
         // Updates the weather every 7 minutes
-        setInterval(function(){
+        $interval(function(){
             weather.then(function(data) {
                 vm.currentWeather = data.data.current_observation.temp_f;
                 vm.currentCondition = data.data.current_observation.weather.toLowerCase();
@@ -45,7 +45,7 @@ angular.module('desktopApp')
                 var seconds = currentTime.getSeconds();
                 vm.lastUpdate = hours + ":" + minutes + ":" + seconds;
             })
-        }, 420000);
+        }, 30000);
 
 
         // Gets time working, and updating every second.
