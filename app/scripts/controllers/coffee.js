@@ -17,6 +17,7 @@ angular.module('desktopApp')
         'use strict';
         var vm = this;
 
+        vm.updated = [];
 
         // Initializes the weather on load
         weather.then(function(data) {
@@ -28,13 +29,24 @@ angular.module('desktopApp')
             weather.then(function(data) {
                 setWeather(data);
             })
-        }, 420000);
+        }, 30000);
 
         function setWeather(data) {
             var weatherObj = data.data.current_observation;
             vm.currentWeather = weatherObj.temp_f;
             vm.currentCondition = weatherObj.weather;
             vm.weatherIcon = 'images/weather_icons/' + weatherObj.icon + '.svg';
+
+            var today = new Date();
+            var hh = today.getHours();
+            var mm = today.getMinutes();
+            var ss = today.getSeconds();
+
+            var currentTime = hh + ":" + mm + ":" + ss;
+
+            console.log(currentTime);
+
+            vm.updated.push(currentTime);
         }
 
 
