@@ -1,0 +1,16 @@
+$white-smoke: #F6F6F6;
+$cinderella: #FBDAC7;
+$cowboy: #4B252D;
+
+.raspi-app{
+    font-family: 'Oxygen', Helvetica, sans-serif;
+    color: $cowboy;
+    letter-spacing: 0.05em;
+    background-color: $cinderella;
+    height: 100vh;
+
+    nav{
+        padding: 0.5em 1em;
+        background-color: $white-smoke;
+    }
+}

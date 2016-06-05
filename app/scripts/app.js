@@ -34,7 +34,7 @@ angular
       .when('/coffee', {
         templateUrl: 'views/coffee.html',
         controller: 'CoffeeCtrl',
-        controllerAs: 'coffee'
+        controllerAs: 'vm'
       })
       .otherwise({
         redirectTo: '/'
