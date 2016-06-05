@@ -1,16 +1,24 @@
-$white-smoke: #F6F6F6;
-$cinderella: #FBDAC7;
-$cowboy: #4B252D;
+$bg-color: #FDD692;
+$cowboy: #754F44;
+$orange: #EC7357;
+$yellow: #FBFFB9;
 
 .raspi-app{
-    font-family: 'Oxygen', Helvetica, sans-serif;
+    font-family: 'Lato', Helvetica, sans-serif;
     color: $cowboy;
     letter-spacing: 0.05em;
-    background-color: $cinderella;
+    background-color: $bg-color;
     height: 100vh;
 
     nav{
         padding: 0.5em 1em;
-        background-color: $white-smoke;
+        background-color: $cowboy;
+        color: $bg-color;
+        margin-bottom: 3em;
+    }
+
+    object {
+        width: 5em;
+        margin: 2em;
     }
 }

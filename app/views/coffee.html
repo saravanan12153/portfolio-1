@@ -1,7 +1,7 @@
 <div class="raspi-app">
     <nav>
         <div class="weather">
-            {{ vm.currentWeather | number: 0 }}°F
+            {{ vm.currentWeather | number: 0 }}°F {{ vm.currentCondition }}
         </div>
 
         <div class="time">
@@ -9,5 +9,7 @@
         </div>
     </nav>
 
-    <h1> Coffee coming soon ... </h1>
+    <object type="image/svg+xml" data="images/chemex.svg" class=""></object>
+
+    <h1> Coffee coming soon </h1>
 </div>
