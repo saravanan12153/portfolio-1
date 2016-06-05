@@ -29,7 +29,7 @@ angular.module('desktopApp')
             weather.then(function(data) {
                 setWeather(data);
             })
-        }, 30000);
+        }, 420000);
 
         function setWeather(data) {
             var weatherObj = data.data.current_observation;
