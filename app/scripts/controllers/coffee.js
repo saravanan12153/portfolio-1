@@ -20,17 +20,22 @@ angular.module('desktopApp')
 
         // Initializes the weather on load
         weather.then(function(data) {
-            vm.currentWeather = data.data.current_observation.temp_f;
-            vm.currentCondition = data.data.current_observation.weather.toLowerCase();
+            setWeather(data);
         });
 
         // Updates the weather every 7 minutes
         $interval(function(){
             weather.then(function(data) {
-                vm.currentWeather = data.data.current_observation.temp_f;
-                vm.currentCondition = data.data.current_observation.weather.toLowerCase();
+                setWeather(data);
             })
         }, 420000);
+
+        function setWeather(data) {
+            var weatherObj = data.data.current_observation;
+            vm.currentWeather = weatherObj.temp_f;
+            vm.currentCondition = weatherObj.weather;
+            vm.weatherIcon = 'images/weather_icons/' + weatherObj.icon + '.svg';
+        }
 
 
         // Gets time working, and updating every second.

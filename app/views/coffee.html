@@ -1,15 +1,22 @@
 <div class="raspi-app">
-    <nav>
-        <div class="weather">
-            {{ vm.currentWeather | number: 0 }}°F {{ vm.currentCondition }}
-        </div>
-
+    <div class='nav'>
         <div class="time">
             {{ vm.currentTime }}
         </div>
-    </nav>
+    </div>
 
-    <object type="image/svg+xml" data="images/chemex.svg" class=""></object>
+    <div class="weather-pane">
 
-    <h1> Coffee coming soon </h1>
+        <img ng-src="{{ vm.weatherIcon }}" class="weather-icon" />
+        <br />
+
+        <div class="temp">{{ vm.currentWeather | number: 0 }}°F</div>
+        <div class="condition">{{ vm.currentCondition }}</div>
+    </div>
+
+    <div class="coffee-pane">
+        <object type="image/svg+xml" data="images/chemex.svg" class=""></object>
+
+        <h3> Coffee app in development </h3>
+    </div>
 </div>

@@ -2,23 +2,61 @@ $bg-color: darken(#FDD692, 5%);
 $cowboy: darken(#754F44, 5%);
 $orange: darken(#EC7357, 5%);
 $yellow: darken(#FBFFB9, 5%);
-
-.raspi-app{
+.raspi-app {
     font-family: 'Lato', Helvetica, sans-serif;
     color: $cowboy;
     letter-spacing: 0.05em;
     background-color: $bg-color;
     height: 100vh;
-
-    nav{
+    .nav {
         padding: 0.5em 1em;
-        background-color: $cowboy;
-        color: $bg-color;
-        margin-bottom: 3em;
+        background-color: white;
+        color: black;
+        text-align: center;
+    }
+    .weather-pane {
+        width: 50vw;
+        height: 100vw;
+        float: left;
+        background: darken(#2BC0E4, 10%);
+        /* fallback for old browsers */
+        background: -webkit-linear-gradient(to top, darken(#2BC0E4, 10%) , #EAECC6);
+        /* Chrome 10-25, Safari 5.1-6 */
+        background: linear-gradient(to top, darken(#2BC0E4, 10%) , #EAECC6);
+        /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+        padding: 4em 0;
+        color: black;
+
+        img {
+            max-width: 10em;
+            opacity: 0.6;
+        }
+
+        .temp{
+            margin: 0.5em;
+            font-size: 3em;
+            opacity: 0.7;
+        }
+
+        .condition {
+            opacity: 0.7;
+        }
+
+
+
+
     }
 
-    object {
-        width: 5em;
-        margin: 2em;
+    .coffee-pane {
+        padding: 3em 0;
+        width: 50vw;
+        height: 100vw;
+        float:right;
+        object {
+            width: 5em;
+            margin: 2em;
+        }
     }
+
+
 }
