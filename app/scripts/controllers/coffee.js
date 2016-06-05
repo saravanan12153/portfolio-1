@@ -17,10 +17,21 @@ angular.module('desktopApp')
         'use strict';
         var vm = this;
 
+        vm.lastUpdate = "";
+
+
+
         // Initializes the weather on load
         weather.then(function(data) {
+
             vm.currentWeather = data.data.current_observation.temp_f;
             vm.currentCondition = data.data.current_observation.weather.toLowerCase();
+
+            var currentTime = new Date();
+            var hours = currentTime.getHours();
+            var minutes = currentTime.getMinutes();
+            var seconds = currentTime.getSeconds();
+            vm.lastUpdate = hours + ":" + minutes + ":" + seconds;
         })
 
         // Updates the weather every 7 minutes
@@ -28,6 +39,11 @@ angular.module('desktopApp')
             weather.then(function(data) {
                 vm.currentWeather = data.data.current_observation.temp_f;
                 vm.currentCondition = data.data.current_observation.weather.toLowerCase();
+                var currentTime = new Date();
+                var hours = currentTime.getHours();
+                var minutes = currentTime.getMinutes();
+                var seconds = currentTime.getSeconds();
+                vm.lastUpdate = hours + ":" + minutes + ":" + seconds;
             })
         }, 420000);
 
@@ -45,6 +61,10 @@ angular.module('desktopApp')
             if (hours > 11) {
                 t_str = (hours - 12) + ":" + minutes;
                 t_str += "PM";
+                if( hours == 12 ){
+                    t_str = "12:" + minutes;
+                    t_str += "PM";
+                }
             } else if (hours === 0) {
                 t_str = '12:' + minutes + "AM";
 

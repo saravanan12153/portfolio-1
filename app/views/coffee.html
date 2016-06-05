@@ -1,7 +1,7 @@
 <div class="raspi-app">
     <nav>
         <div class="weather">
-            {{ vm.currentWeather | number: 0 }}°F {{ vm.currentCondition }}
+            {{ vm.currentWeather | number: 0 }}°F {{ vm.currentCondition }} :: Updated: {{vm.lastUpdate}}
         </div>
 
         <div class="time">
