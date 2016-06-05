@@ -8,7 +8,6 @@ $yellow: darken(#FBFFB9, 5%);
     letter-spacing: 0.05em;
     background-color: $bg-color;
     height: 480px;
-
     line-height: 1.5em !important;
     .time {
         padding: 0.5em 1em;
@@ -19,45 +18,34 @@ $yellow: darken(#FBFFB9, 5%);
         right: 0;
         margin: 0.5em;
         border-radius: 6px;
-        box-shadow: 0 4px 2px -2px rgba(0,0,0,0.4)
-
+        box-shadow: 0 4px 2px -2px rgba(0,0,0,0.4);
     }
     .weather-pane {
         width: 20vw;
         height: 480px;
         float: left;
-        padding: 6em 1.5em;
+        padding: 5em 1.5em;
         color: black;
-
-        border-right: 3px solid white;
-
         img {
             max-width: 8vw;
         }
-
-        .temp{
-            margin: 1em;
-            font-size: 4.5vw;
+        .temp {
+            margin: 1em 0;
+            font-size: 5vw;
         }
-
-        .condition{
-            font-size: 1.75vw;
+        .condition {
+            font-size: 1.85vw;
             letter-spacing: 0;
         }
-
-
     }
-
     .coffee-pane {
         padding: 3em 0;
         width: 80vw;
         height: 480px;
-        float:left;
+        float: left;
         object {
             width: 5em;
             margin: 2em;
         }
     }
-
-
 }
