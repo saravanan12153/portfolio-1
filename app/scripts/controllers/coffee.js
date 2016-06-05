@@ -8,7 +8,7 @@
  * Controller of the desktopApp
  */
 angular.module('desktopApp')
-    .controller('CoffeeCtrl', ['$interval', '$http', function($interval, $http) {
+    .controller('CoffeeCtrl', ['$interval', function($interval) {
         this.awesomeThings = [
             'HTML5 Boilerplate',
             'AngularJS',
@@ -16,15 +16,49 @@ angular.module('desktopApp')
         ];
         'use strict';
         var vm = this;
-        
+
         function setWeather() {
-            $http.get('http://api.wunderground.com/api/8f4fcb7cc3c8f50f/conditions/geolookup/q/autoip.json')
-                .success(function(response) {
-                    var weatherObj = response.current_observation;
-                    vm.currentWeather = weatherObj.temp_f;
-                    vm.currentCondition = weatherObj.weather;
-                    vm.weatherIcon = 'images/weather_icons/' + weatherObj.icon + '.svg';
-                });
+            $.ajax({
+                url: 'https://api.forecast.io/forecast/a0851d6b87a2a541d0fbaff2d0f7518b/41.9035690,-87.6715350',
+                dataType: 'JSONP',
+                jsonpCallback: 'callback',
+                type: 'GET',
+                success: function (response) {
+                    vm.icon = 'images/weather_icons/' + response.currently.icon + '.svg';
+                    vm.temp = response.currently.temperature;
+                    vm.summary = response.minutely.summary;
+                    var condition = response.currently.icon;
+                    setWeatherBg(condition);
+                }
+            });
+        }
+
+        function setWeatherBg(icon) {
+            var gradient = {
+                'clear-day': ['#2BC0E4', '#EAECC6', 'black'],
+                'clear-night': ['#283E51', '#4B79A1', 'white'],
+                'rain': ['#360033', '#0b8793', 'white'],
+                'snow': ['#274046', '#E6DADA', 'white'],
+                'sleet': ['#403B4A', '#E7E9BB', 'white'],
+                'wind': ['#003973', '#E5E5BE', 'white'],
+                'fog': ['#8e9eab', '#eef2f3', 'black'],
+                'cloudy': ['#757F9A', '#D7DDE8', 'black'],
+                'partly-cloudy-day': ['#757F9A', '#D7DDE8', 'black'],
+                'partly-cloudy-night': ['#16222A', '#3A6073', 'white']
+            };
+
+            for ( var condition in gradient ) {
+                if (icon === condition) {
+                    var bottomColor = gradient[condition][0];
+                    var topColor = gradient[condition][1];
+                    vm.bgGradient = "background: linear-gradient(to top, " + bottomColor + " , " + topColor + ");"
+                    vm.color = "color: " + gradient[condition][2];
+                    return;
+                } else {
+                    vm.bgGradient = "background: linear-gradient(to top, #757F9A, #D7DDE8);"
+                    vm.color = "color: black";
+                }
+            }
         }
 
         setWeather();

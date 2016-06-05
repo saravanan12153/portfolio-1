@@ -3,13 +3,13 @@
         {{ vm.currentTime }}
     </span>
 
-    <div class="weather-pane">
+    <div class="weather-pane" style="{{ vm.bgGradient }}">
 
-        <img ng-src="{{ vm.weatherIcon }}" class="weather-icon" />
+        <img ng-src="{{ vm.icon }}" class="weather-icon" />
         <br />
 
-        <div class="temp">{{ vm.currentWeather | number: 0 }}°</div>
-        <div class="condition">{{ vm.currentCondition }}</div>
+        <div class="temp" style="{{ vm.color }}">{{ vm.temp | number: 0 }}°</div>
+        <div class="condition" style="{{ vm.color }}">{{ vm.summary }}</div>
 
     </div>
 

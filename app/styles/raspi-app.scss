@@ -26,26 +26,23 @@ $yellow: darken(#FBFFB9, 5%);
         width: 20vw;
         height: 480px;
         float: left;
-        background: darken(#2BC0E4, 10%);
-        /* fallback for old browsers */
-        background: -webkit-linear-gradient(to top, darken(#2BC0E4, 10%) , #FFF7AC);
-        /* Chrome 10-25, Safari 5.1-6 */
-        background: linear-gradient(to top, darken(#2BC0E4, 10%) , #FFF7AC);
-        /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-        padding: 6em 1em;
+        padding: 6em 1.5em;
         color: black;
 
+        border-right: 3px solid white;
+
         img {
-            max-width: 10vw;
+            max-width: 8vw;
         }
 
         .temp{
             margin: 1em;
-            font-size: 5vw;
+            font-size: 4.5vw;
         }
 
         .condition{
             font-size: 1.75vw;
+            letter-spacing: 0;
         }
 
 
