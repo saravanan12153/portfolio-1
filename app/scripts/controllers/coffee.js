@@ -62,7 +62,8 @@ angular.module('desktopApp')
         }
 
         setWeather();
-        $interval(setWeather, 420000);
+        // Get the weather every 5 minutes
+        $interval(setWeather, 300000);
 
 
 
