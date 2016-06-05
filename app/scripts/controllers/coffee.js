@@ -45,10 +45,10 @@ angular.module('desktopApp')
 
             if (hours > 11) {
                 t_str = (hours - 12) + ":" + minutes;
-                t_str += "PM";
+                t_str += " PM";
                 if( hours == 12 ){
                     t_str = "12:" + minutes;
-                    t_str += "PM";
+                    t_str += " PM";
                 }
             } else if (hours === 0) {
                 t_str = '12:' + minutes + "AM";
@@ -61,4 +61,5 @@ angular.module('desktopApp')
         }
         $interval(updateTime, 1000);
         updateTime();
+
     }]);
