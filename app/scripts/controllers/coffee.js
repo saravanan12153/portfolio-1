@@ -8,7 +8,7 @@
  * Controller of the desktopApp
  */
 angular.module('desktopApp')
-    .controller('CoffeeCtrl', ['$interval', 'weather', function($interval, weather) {
+    .controller('CoffeeCtrl', ['$interval', '$http', function($interval, $http) {
         this.awesomeThings = [
             'HTML5 Boilerplate',
             'AngularJS',
@@ -16,38 +16,20 @@ angular.module('desktopApp')
         ];
         'use strict';
         var vm = this;
-
-        vm.updated = [];
-
-        // Initializes the weather on load
-        weather.then(function(data) {
-            setWeather(data);
-        });
-
-        // Updates the weather every 7 minutes
-        $interval(function(){
-            weather.then(function(data) {
-                setWeather(data);
-            })
-        }, 420000);
-
-        function setWeather(data) {
-            var weatherObj = data.data.current_observation;
-            vm.currentWeather = weatherObj.temp_f;
-            vm.currentCondition = weatherObj.weather;
-            vm.weatherIcon = 'images/weather_icons/' + weatherObj.icon + '.svg';
-
-            var today = new Date();
-            var hh = today.getHours();
-            var mm = today.getMinutes();
-            var ss = today.getSeconds();
-
-            var currentTime = hh + ":" + mm + ":" + ss;
-
-            console.log(currentTime);
-
-            vm.updated.push(currentTime);
+        
+        function setWeather() {
+            $http.get('http://api.wunderground.com/api/8f4fcb7cc3c8f50f/conditions/geolookup/q/autoip.json')
+                .success(function(response) {
+                    var weatherObj = response.current_observation;
+                    vm.currentWeather = weatherObj.temp_f;
+                    vm.currentCondition = weatherObj.weather;
+                    vm.weatherIcon = 'images/weather_icons/' + weatherObj.icon + '.svg';
+                });
         }
+
+        setWeather();
+        $interval(setWeather, 420000);
+
 
 
         // Gets time working, and updating every second.
@@ -63,14 +45,14 @@ angular.module('desktopApp')
             if (hours > 11) {
                 t_str = (hours - 12) + ":" + minutes;
                 t_str += " PM";
-                if( hours == 12 ){
+                if (hours == 12) {
                     t_str = "12:" + minutes;
                     t_str += " PM";
                 }
             } else if (hours === 0) {
                 t_str = '12:' + minutes + "AM";
 
-            }else {
+            } else {
                 t_str += "AM";
             }
 

@@ -8,12 +8,9 @@
         <img ng-src="{{ vm.weatherIcon }}" class="weather-icon" />
         <br />
 
-        <div class="temp">{{ vm.currentWeather | number: 0 }}°F</div>
+        <div class="temp">{{ vm.currentWeather | number: 0 }}°</div>
         <div class="condition">{{ vm.currentCondition }}</div>
 
-        <div ng-repeat="update in vm.updated">
-            • {{update}} <br />
-        </div>
     </div>
 
     <div class="coffee-pane">

@@ -23,43 +23,39 @@ $yellow: darken(#FBFFB9, 5%);
 
     }
     .weather-pane {
-        width: 50vw;
+        width: 20vw;
         height: 480px;
         float: left;
         background: darken(#2BC0E4, 10%);
         /* fallback for old browsers */
-        background: -webkit-linear-gradient(to top, darken(#2BC0E4, 10%) , #EAECC6);
+        background: -webkit-linear-gradient(to top, darken(#2BC0E4, 10%) , #FFF7AC);
         /* Chrome 10-25, Safari 5.1-6 */
-        background: linear-gradient(to top, darken(#2BC0E4, 10%) , #EAECC6);
+        background: linear-gradient(to top, darken(#2BC0E4, 10%) , #FFF7AC);
         /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-        padding: 4em 0;
+        padding: 6em 1em;
         color: black;
 
         img {
-            max-width: 10em;
-            opacity: 0.6;
+            max-width: 10vw;
         }
 
         .temp{
             margin: 1em;
-            font-size: 3em;
-            opacity: 0.7;
+            font-size: 5vw;
         }
 
-        .condition {
-            opacity: 0.7;
+        .condition{
+            font-size: 1.75vw;
         }
-
-
 
 
     }
 
     .coffee-pane {
         padding: 3em 0;
-        width: 50vw;
+        width: 80vw;
         height: 480px;
-        float:right;
+        float:left;
         object {
             width: 5em;
             margin: 2em;
