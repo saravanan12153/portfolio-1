@@ -31,6 +31,11 @@ angular
         controller: 'ResponsiveCtrl',
         controllerAs: 'vm'
       })
+      .when('/coffee', {
+        templateUrl: 'views/coffee.html',
+        controller: 'CoffeeCtrl',
+        controllerAs: 'coffee'
+      })
       .otherwise({
         redirectTo: '/'
       });
