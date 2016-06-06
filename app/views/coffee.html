@@ -1,7 +1,7 @@
 <div class="raspi-app">
-    <span class="time">
+    <!-- <span class="time">
         {{ vm.currentTime }}
-    </span>
+    </span> -->
 
     <div class="weather-pane" style="{{ vm.bgGradient }}">
 
@@ -15,8 +15,36 @@
     </div>
 
     <div class="coffee-pane">
-        <object type="image/svg+xml" data="images/chemex.svg" class=""></object>
+        <div class="gram-slider">
+            <div class="grams">{{ vm.sliderValue }}g</div>
+            <rzslider rz-slider-model="vm.gramSlider.value" rz-slider-options="vm.gramSlider.options" class="with-legend"></rzslider>
+        </div>
 
-        <h3> Coffee app <br /> [in_development] </h3>
+        <div class="step">
+            <div class="title">
+                <h3>Bloom</h3>
+                <p>Pour {{ vm.bloomGrams }}g</p>
+            </div>
+            <div class="timer">
+                {{ vm.bloomCounter | secondsToDateTime | date: 'mm:ss' }}
+            </div>
+        </div>
+
+        <div class="step">
+            <div class="title">
+                <h3>Pour</h3>
+                <p>
+                    Half pour: {{ vm.halfPour }}<br />
+                    Total pour: {{ vm.pourGrams }}g</p>
+            </div>
+            <div class="timer">
+                {{vm.pourCounter | secondsToDateTime | date: 'mm:ss'}}
+            </div>
+        </div>
+
+
+
+        <button ng-click="vm.startBloomTimer()" class="btn btn-lg btn-primary" ng-disabled="vm.isDisabled">{{ vm.isDisabled ? "Currently Brewing" : "Begin Pour Over" }}</button>
+
     </div>
 </div>

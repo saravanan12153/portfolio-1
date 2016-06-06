@@ -1,14 +1,22 @@
 $bg-color: darken(#FDD692, 5%);
 $cowboy: darken(#754F44, 5%);
-$orange: darken(#EC7357, 5%);
+$orange: #E84228;
 $yellow: darken(#FBFFB9, 5%);
 .raspi-app {
+
     font-family: 'Lato', Helvetica, sans-serif;
-    color: $cowboy;
+    font-size: 110%;
     letter-spacing: 0.05em;
-    background-color: $bg-color;
     height: 480px;
     line-height: 1.5em !important;
+
+    background: url('http://downloads.dvq.co.nz/assets/img/downloads/hand-crafted-wood-diagonal/1920x1200.png') no-repeat center center;
+      background-size: cover;
+      -webkit-background-size: cover;
+      -moz-background-size: cover;
+      -o-background-size: cover;
+      color: white;
+
     .time {
         padding: 0.5em 1em;
         background-color: white;
@@ -22,10 +30,14 @@ $yellow: darken(#FBFFB9, 5%);
     }
     .weather-pane {
         width: 20vw;
-        height: 480px;
+        min-height: 480px;
         float: left;
         padding: 5em 1.5em;
         color: black;
+
+        padding-right: calc(1.5em + 2px);
+
+        border-right: 2px solid white;
         img {
             max-width: 8vw;
         }
@@ -39,13 +51,87 @@ $yellow: darken(#FBFFB9, 5%);
         }
     }
     .coffee-pane {
-        padding: 3em 0;
-        width: 80vw;
+        padding: 3em;
+        padding-top: 2em;
+        width: 620px;
         height: 480px;
         float: left;
-        object {
-            width: 5em;
-            margin: 2em;
+
+        .gram-slider{
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            .rzslider {
+                width: 60%;
+            }
+
+            .rz-bar {
+                background-color: white;
+
+            }
+
+            .rzslider .rz-bubble {
+                display: none;
+            }
+
+            .rz-pointer {
+                background-color: $orange;
+                width: 42px;
+                height: 42px;
+                border-radius: 99em;
+                top: -18px;
+                box-shadow: 0 2px 3px 1px rgba(0,0,0,0.2);
+
+                &::after{
+                    background-color: $orange;
+                }
+            }
+
+            .grams {
+                padding: 0.75em;
+                font-size: 2em;
+                font-family: 'Source Code Pro', 'Lato', Helvetica, sans-serif;
+                background-color: #333;
+                width: 4em;
+                border-radius: 6px;
+                box-shadow: inset 0px 0px 10px rgba(0, 0, 0, 0.6);
+            }
         }
+
+        .step {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 0.75em 0;
+            text-align: left;
+
+            h3 {
+                padding-bottom: 0.25em;
+                border-bottom: 1px solid white;
+                width: 12em;
+            }
+
+            .timer {
+                font-family: 'Source Code Pro', 'Lato', Helvetica, sans-serif;
+                background-color: #333;
+                font-size: 1.5em;
+                padding: 0.75em;
+                border-radius: 6px;
+                margin-top: 1em;
+                box-shadow: inset 0px 0px 10px rgba(0, 0, 0, 0.6);
+            }
+        }
+
+        .btn-primary {
+            background-color: $orange;
+            width: 50%;
+            border: none;
+            box-shadow: 0 2px 3px 1px rgba(0,0,0,0.2);
+            margin-top: 1.5em;
+
+        }
+
     }
 }

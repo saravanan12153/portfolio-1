@@ -17,7 +17,8 @@ angular
     'ngSanitize',
     'ngTouch',
     'ui.bootstrap',
-    'timer'
+    'timer',
+    'rzModule'
   ])
   .config(['$routeProvider', '$sceDelegateProvider', function ($routeProvider, $sceDelegateProvider) {
     $routeProvider
@@ -45,4 +46,8 @@ angular
           'https://scontent.cdninstagram.com/**'
       ]);
 
-  }]);
+  }]).filter('secondsToDateTime', [function() {
+    return function(seconds) {
+        return new Date(1970, 0, 1).setSeconds(seconds);
+    };
+}]);

@@ -47,7 +47,7 @@ angular.module('desktopApp')
                 'partly-cloudy-night': ['#16222A', '#3A6073', 'white']
             };
 
-            for ( var condition in gradient ) {
+            for (var condition in gradient) {
                 if (icon === condition) {
                     var bottomColor = gradient[condition][0];
                     var topColor = gradient[condition][1];
@@ -64,6 +64,54 @@ angular.module('desktopApp')
         setWeather();
         // Get the weather every 5 minutes
         $interval(setWeather, 300000);
+
+        vm.sliderValue = 10;
+        vm.bloomGrams = vm.sliderValue * 2;
+        vm.pourGrams = vm.sliderValue * 16;
+        vm.halfPour = vm.pourGrams / 2;
+
+        vm.gramSlider = {
+            value: 10,
+            options: {
+                floor: 10,
+                ceil: 40,
+                hideLimitLabels: true,
+                onChange: function(sliderId, modelValue, highValue, pointerType) {
+                    vm.sliderValue = modelValue;
+                    vm.bloomGrams = modelValue * 2;
+                    vm.pourGrams = modelValue * 16;
+                    vm.halfPour = vm.pourGrams / 2;
+                }
+            }
+        };
+
+        vm.bloomCounter = 60;
+        vm.pourCounter = 225 - vm.bloomCounter;
+
+        vm.isDisabled = false;
+
+        vm.startBloomTimer = function() {
+                var bloomBegin = $interval(function() {
+                    vm.isDisabled = true;
+                    vm.bloomCounter--;
+                    if (vm.bloomCounter === 0) {
+                        vm.startPourTimer();
+                        $interval.cancel(bloomBegin)
+                    }
+                }, 1000);
+
+        }
+
+        vm.startPourTimer = function() {
+            var pourBegin = $interval(function() {
+                vm.pourCounter--;
+
+                if (vm.pourCounter === 0) {
+                    vm.isDisabled = false;
+                    $interval.cancel(pourBegin)
+                }
+            }, 1000);
+        }
 
 
 
