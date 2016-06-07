@@ -45,7 +45,7 @@
 
 
         <button ng-click="vm.startBloomTimer()" class="btn btn-lg btn-primary" ng-disabled="vm.isDisabled">{{ vm.isDisabled ? "Currently Brewing" : "Begin Pour Over" }}</button>
-        <button ng-click="vm.stopTimer()" class="btn btn-lg btn-primary btn-reset">Reset</button>
+        <button ng-click="vm.stopTimer()" class="btn btn-lg btn-primary btn-reset" ng-if="vm.isDisabled">Reset</button>
 
     </div>
 </div>

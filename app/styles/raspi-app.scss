@@ -34,12 +34,9 @@ $yellow: darken(#FBFFB9, 5%);
         float: left;
         padding: 5em 1.5em;
         color: black;
-
         opacity: 0.8;
+        box-shadow: 0 2px 3px 1px rgba(0,0,0,0.2);
 
-        padding-right: calc(1.5em + 2px);
-
-        border-right: 2px solid white;
         img {
             max-width: 8vw;
         }
@@ -70,7 +67,10 @@ $yellow: darken(#FBFFB9, 5%);
             }
 
             .rz-bar {
-                background-color: white;
+                background-color: #333;
+                box-shadow: inset 0px 0px 4px rgba(0, 0, 0, 0.6);
+                height: 0.5em;
+                border-radius: 99em;
 
             }
 
@@ -80,10 +80,10 @@ $yellow: darken(#FBFFB9, 5%);
 
             .rz-pointer {
                 background-color: $orange;
-                width: 42px;
-                height: 42px;
+                width: 37px;
+                height: 37px;
                 border-radius: 99em;
-                top: -18px;
+                top: -15px;
                 box-shadow: 0 2px 3px 1px rgba(0,0,0,0.2);
 
                 &::after{
