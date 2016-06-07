@@ -35,6 +35,8 @@ $yellow: darken(#FBFFB9, 5%);
         padding: 5em 1.5em;
         color: black;
 
+        opacity: 0.8;
+
         padding-right: calc(1.5em + 2px);
 
         border-right: 2px solid white;
@@ -130,6 +132,13 @@ $yellow: darken(#FBFFB9, 5%);
             border: none;
             box-shadow: 0 2px 3px 1px rgba(0,0,0,0.2);
             margin-top: 1.5em;
+
+            &.btn-reset {
+                background-color: #333;
+                width: 20%;
+                margin-left: 1em;
+
+            }
 
         }
 

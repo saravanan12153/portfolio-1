@@ -90,11 +90,15 @@ angular.module('desktopApp')
 
         vm.isDisabled = false;
 
+        var bloomBegin,
+            pourBegin;
+
         vm.startBloomTimer = function() {
-                var bloomBegin = $interval(function() {
+                bloomBegin = $interval(function() {
                     vm.isDisabled = true;
                     vm.bloomCounter--;
                     if (vm.bloomCounter === 0) {
+                        $('.timer').first().css('background-color', '#E84228');
                         vm.startPourTimer();
                         $interval.cancel(bloomBegin)
                     }
@@ -103,14 +107,26 @@ angular.module('desktopApp')
         }
 
         vm.startPourTimer = function() {
-            var pourBegin = $interval(function() {
+            pourBegin = $interval(function() {
                 vm.pourCounter--;
 
                 if (vm.pourCounter === 0) {
                     vm.isDisabled = false;
+                    vm.bloomCounter = 60;
+                    vm.pourCounter = 225 - vm.bloomCounter;
+                    $('.timer').first().css('background-color', '#333');
                     $interval.cancel(pourBegin)
                 }
             }, 1000);
+        }
+
+        vm.stopTimer = function() {
+            $interval.cancel(bloomBegin);
+            $interval.cancel(pourBegin);
+            vm.isDisabled = false;
+            vm.bloomCounter = 60;
+            vm.pourCounter = 225 - vm.bloomCounter;
+            $('.timer').first().css('background-color', '#333');
         }
 
 
