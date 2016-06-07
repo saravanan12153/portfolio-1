@@ -24,6 +24,7 @@ angular.module('desktopApp')
                 jsonpCallback: 'callback',
                 type: 'GET',
                 success: function (response) {
+                    console.log(response);
                     vm.icon = 'images/weather_icons/' + response.currently.icon + '.svg';
                     vm.temp = response.currently.temperature;
                     vm.summary = response.minutely.summary;
@@ -132,32 +133,32 @@ angular.module('desktopApp')
 
 
         // Gets time working, and updating every second.
-        function updateTime() {
-            var currentTime = new Date();
-            var hours = currentTime.getHours();
-            var minutes = currentTime.getMinutes();
-            if (minutes < 10) {
-                minutes = "0" + minutes;
-            }
-            var t_str = hours + ":" + minutes;
-
-            if (hours > 11) {
-                t_str = (hours - 12) + ":" + minutes;
-                t_str += " PM";
-                if (hours == 12) {
-                    t_str = "12:" + minutes;
-                    t_str += " PM";
-                }
-            } else if (hours === 0) {
-                t_str = '12:' + minutes + "AM";
-
-            } else {
-                t_str += "AM";
-            }
-
-            vm.currentTime = t_str;
-        }
-        $interval(updateTime, 1000);
-        updateTime();
+        // function updateTime() {
+        //     var currentTime = new Date();
+        //     var hours = currentTime.getHours();
+        //     var minutes = currentTime.getMinutes();
+        //     if (minutes < 10) {
+        //         minutes = "0" + minutes;
+        //     }
+        //     var t_str = hours + ":" + minutes;
+        //
+        //     if (hours > 11) {
+        //         t_str = (hours - 12) + ":" + minutes;
+        //         t_str += " PM";
+        //         if (hours == 12) {
+        //             t_str = "12:" + minutes;
+        //             t_str += " PM";
+        //         }
+        //     } else if (hours === 0) {
+        //         t_str = '12:' + minutes + "AM";
+        //
+        //     } else {
+        //         t_str += "AM";
+        //     }
+        //
+        //     vm.currentTime = t_str;
+        // }
+        // $interval(updateTime, 1000);
+        // updateTime();
 
     }]);
