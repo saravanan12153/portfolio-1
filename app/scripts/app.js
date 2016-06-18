@@ -10,14 +10,10 @@
  */
 angular
   .module('desktopApp', [
-    'ngAnimate',
-    'ngCookies',
-    'ngResource',
     'ngRoute',
     'ngSanitize',
     'ngTouch',
     'ui.bootstrap',
-    'timer',
     'rzModule'
   ])
   .config(['$routeProvider', '$sceDelegateProvider', function ($routeProvider, $sceDelegateProvider) {
