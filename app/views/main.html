@@ -1,75 +1,118 @@
 <div ng-controller="MainCtrl as vm" class="main" resize>
 
-    <div class="content-container">
-        <nav>
-            <div class="left-nav">
-                <img ng-src="{{vm.profile.avatar}}" />
-                <span class="name" ng-if="windowWidth >= vm.breakPoint ">Jon Samp</span>
-            </div>
+  <div class="content-container">
+    <nav>
+      <div class="left-nav">
+        <img ng-src="{{vm.profile.avatar}}" />
+        <span class="name" ng-if="windowWidth >= vm.breakPoint ">Jon Samp</span>
+      </div>
 
-            <div class="social-media">
-                <ul>
-                    <li ng-repeat="key in vm.profile.socialIcons">
-                        <a href="{{key.url}}" target="new"><i class="fa fa-lg social-media-icon" ng-class="key.icon"></i></a>
-                    </li>
-                </ul>
-            </div>
-        </nav>
-    </div>
+      <div class="social-media">
+        <ul>
+          <li ng-repeat="key in vm.profile.socialIcons">
+            <a href="{{key.url}}" target="new"><i class="fa fa-lg social-media-icon" ng-class="key.icon"></i></a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </div>
 
-    <div class="content-container ">
-        <div class="about-me">
-            <h3>
+  <div class="content-container ">
+    <div class="about-me">
+      <h3>
                 I'm a front-end developer in Chicago.
                 I like photography, love coffee, and I am thinking about getting a dog.
             </h3>
-        </div>
     </div>
+  </div>
 
-    <div class="instagram" ng-controller="InstagramCtrl as vm">
-        <div class="content-container">
-            <div class="header">
-                <p>Photography:</p>
+  <div class="instagram" ng-controller="InstagramCtrl as vm">
+    <div class="content-container">
+      <div class="header">
+        <p>Photography:</p>
+      </div>
+      <div class="instagram-container">
+        <div ng-if="windowWidth >= vm.breakPoint" ng-repeat="photo in vm.instagramPhotos">
+          <a ng-href={{photo.link}} target="new">
+            <div class="photo" style="transform: rotate( {{ photo.rotate }}deg);">
+              <div ng-if="!photo.video">
+                <img ng-src="{{photo.image}}" />
+              </div>
+              <div ng-if="photo.video">
+                <video autoplay loop src="{{photo.video}}"></video>
+              </div>
+              <p>
+                {{ photo.created_time | date: 'MMM dd, yyyy' }}: {{ photo.caption }}
+                <br />
+              </p>
             </div>
-            <div class="instagram-container">
-                <div ng-if="windowWidth >= vm.breakPoint" ng-repeat="photo in vm.instagramPhotos">
-                    <a ng-href={{photo.link}} target="new">
-                        <div class="photo" style="transform: rotate( {{ photo.rotate }}deg);">
-                            <div ng-if="!photo.video">
-                                <img ng-src="{{photo.image}}" />
-                            </div>
-                            <div ng-if="photo.video">
-                                <video autoplay loop src="{{photo.video}}"></video>
-                            </div>
-                            <p>
-                                {{ photo.created_time | date: 'MMM dd, yyyy' }}: {{ photo.caption }}<br />
-                            </p>
-                        </div>
-                    </a>
-                </div>
+          </a>
+        </div>
 
-                <div ng-if="windowWidth < vm.breakPoint" ng-repeat="photo in vm.instagramPhotos | limitTo: 1">
-                    <a ng-href={{photo.link}} target="new">
-                        <div class="photo" style="transform: rotate( {{ photo.rotate }}deg);">
-                            <div ng-if="!photo.video">
-                                <img ng-src="{{photo.image}}" />
-                            </div>
-                            <div ng-if="photo.video">
-                                <video autoplay loop src="{{photo.video}}"></video>
-                            </div>
-                            <p>
-                                {{ photo.created_time | date: 'MMM dd, yyyy' }}: {{ photo.caption }}
-                            </p>
-                        </div>
-                    </a>
-                </div>
+        <div ng-if="windowWidth < vm.breakPoint" ng-repeat="photo in vm.instagramPhotos | limitTo: 1">
+          <a ng-href={{photo.link}} target="new">
+            <div class="photo" style="transform: rotate( {{ photo.rotate }}deg);">
+              <div ng-if="!photo.video">
+                <img ng-src="{{photo.image}}" />
+              </div>
+              <div ng-if="photo.video">
+                <video autoplay loop src="{{photo.video}}"></video>
+              </div>
+              <p>
+                {{ photo.created_time | date: 'MMM dd, yyyy' }}: {{ photo.caption }}
+              </p>
             </div>
+          </a>
         </div>
+      </div>
     </div>
+  </div>
 
-    <div class="life-week-container" ng-controller="LifeWeek as vm">
-        <div class="content-container">
-            <life-week weeks=vm.weeks my-age=vm.myAge window-width=windowWidth break-point=vm.breakPoint></life-week>
+  <div class="swarm" ng-controller="SwarmCtrl as vm">
+    <div class="content-container">
+
+      <div class="header">
+        <p>Recently seen at:</p>
+      </div>
+
+      <div class="checkinContainer">
+        <div ng-if="windowWidth >= vm.breakPoint" ng-repeat="place in vm.data | limitTo: 3">
+
+          <div class="checkin">
+            <i class="fa fa-map-pin" aria-hidden="true"></i>
+            <div>
+              <div class="name">
+                {{ place.venue.name }}
+              </div>
+              <div class="category">
+                {{ place.venue.categories[0].name }}
+              </div>
+            </div>
+          </div>
         </div>
+
+
+        <div ng-if="windowWidth < vm.breakPoint" ng-repeat="place in vm.data | limitTo: 1">
+
+          <div class="checkin">
+            <i class="fa fa-map-pin" aria-hidden="true"></i>
+            <div>
+              <div class="name">
+                {{ place.venue.name }}
+              </div>
+              <div class="category">
+                {{ place.venue.categories[0].name }}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
+  </div>
+
+  <div class="life-week-container" ng-controller="LifeWeek as vm">
+    <div class="content-container">
+      <life-week weeks=vm.weeks my-age=vm.myAge window-width=windowWidth break-point=vm.breakPoint></life-week>
+    </div>
+  </div>
 </div>
