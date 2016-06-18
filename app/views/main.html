@@ -4,7 +4,7 @@
     <nav>
       <div class="left-nav">
         <img ng-src="{{vm.profile.avatar}}" />
-        <span class="name" ng-if="windowWidth >= vm.breakPoint ">Jon Samp</span>
+        <span class="name" ng-if="windowWidth >= vm.breakPoint ">{{ profile.name }}</span>
       </div>
 
       <div class="social-media">
@@ -20,9 +20,9 @@
   <div class="content-container ">
     <div class="about-me">
       <h3>
-                I'm a front-end developer in Chicago.
-                I like photography, love coffee, and I am thinking about getting a dog.
-            </h3>
+        I'm a front-end developer in Chicago.
+        I like photography, love coffee, and I am thinking about getting a dog.
+      </h3>
     </div>
   </div>
 
@@ -42,7 +42,8 @@
                 <video autoplay loop src="{{photo.video}}"></video>
               </div>
               <p>
-                {{ photo.created_time | date: 'MMM dd, yyyy' }}: {{ photo.caption }}
+                {{ photo.created_time | date: 'MMM dd, yyyy' }} <span ng-if="photo.location">@ {{ photo.location }}</span>
+                <br /> {{ photo.caption }}
                 <br />
               </p>
             </div>
@@ -59,7 +60,8 @@
                 <video autoplay loop src="{{photo.video}}"></video>
               </div>
               <p>
-                {{ photo.created_time | date: 'MMM dd, yyyy' }}: {{ photo.caption }}
+                {{ photo.created_time | date: 'MMM dd, yyyy' }} <span ng-if="photo.location">@ {{ photo.location }}</span>
+                <br /> {{ photo.caption }}
               </p>
             </div>
           </a>
@@ -80,7 +82,7 @@
 
           <div class="checkin">
             <div ng-if="place.sticker.image.name" class="checkin-marker">
-              <img ng-src="{{place.sticker.image.prefix}}150{{place.sticker.image.name}}" />
+              <img ng-src="{{place.sticker.image.prefix}}60{{place.sticker.image.name}}" />
             </div>
             <div ng-if="!place.sticker.image.name" class="checkin-marker">
               <i class="fa fa-map-pin" aria-hidden="true"></i>
@@ -101,7 +103,7 @@
 
           <div class="checkin">
             <div ng-if="place.sticker.image.name" class="checkin-marker">
-              <img ng-src="{{place.sticker.image.prefix}}150{{place.sticker.image.name}}" />
+              <img ng-src="{{place.sticker.image.prefix}}60{{place.sticker.image.name}}" />
             </div>
             <div ng-if="!place.sticker.image.name" class="checkin-marker">
               <i class="fa fa-map-pin" aria-hidden="true"></i>

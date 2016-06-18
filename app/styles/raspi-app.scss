@@ -3,144 +3,122 @@ $cowboy: darken(#754F44, 5%);
 $orange: #E84228;
 $yellow: darken(#FBFFB9, 5%);
 .raspi-app {
-
-    font-family: 'Lato', Helvetica, sans-serif;
-    font-size: 110%;
-    letter-spacing: 0.05em;
+  font-family: 'Lato', Helvetica, sans-serif;
+  font-size: 110%;
+  letter-spacing: 0.05em;
+  height: 480px;
+  line-height: 1.5em !important;
+  background: url('http://downloads.dvq.co.nz/assets/img/downloads/hand-crafted-wood-diagonal/1920x1200.png') no-repeat center center;
+  background-size: cover;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  color: white;
+  .time {
+    padding: 0.5em 1em;
+    background-color: white;
+    color: black;
+    text-align: center;
+    position: absolute;
+    right: 0;
+    margin: 0.5em;
+    border-radius: 6px;
+    box-shadow: 0 4px 2px -2px rgba(0,0,0,0.4);
+  }
+  .weather-pane {
+    width: 20vw;
+    min-height: 480px;
+    float: left;
+    padding: 5em 1.5em;
+    color: black;
+    opacity: 0.8;
+    box-shadow: 0 2px 3px 1px rgba(0,0,0,0.2);
+    img {
+      max-width: 8vw;
+    }
+    .temp {
+      margin: 1em 0;
+      font-size: 5vw;
+    }
+    .condition {
+      font-size: 1.85vw;
+      letter-spacing: 0;
+    }
+  }
+  .coffee-pane {
+    padding: 2em 3em 3em;
+    width: 620px;
     height: 480px;
-    line-height: 1.5em !important;
-
-    background: url('http://downloads.dvq.co.nz/assets/img/downloads/hand-crafted-wood-diagonal/1920x1200.png') no-repeat center center;
-      background-size: cover;
-      -webkit-background-size: cover;
-      -moz-background-size: cover;
-      -o-background-size: cover;
-      color: white;
-
-    .time {
-        padding: 0.5em 1em;
-        background-color: white;
-        color: black;
-        text-align: center;
-        position: absolute;
-        right: 0;
-        margin: 0.5em;
-        border-radius: 6px;
-        box-shadow: 0 4px 2px -2px rgba(0,0,0,0.4);
-    }
-    .weather-pane {
-        width: 20vw;
-        min-height: 480px;
-        float: left;
-        padding: 5em 1.5em;
-        color: black;
-        opacity: 0.8;
+    float: left;
+    .gram-slider {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      .rzslider {
+        width: 60%;
+      }
+      .rz-bar {
+        background-color: #333;
+        box-shadow: inset 0 0 4px rgba(0, 0, 0, 0.6);
+        height: 0.5em;
+        border-radius: 99em;
+      }
+      .rzslider .rz-bubble {
+        display: none;
+      }
+      .rz-pointer {
+        background-color: $orange;
+        width: 37px;
+        height: 37px;
+        border-radius: 99em;
+        top: -15px;
         box-shadow: 0 2px 3px 1px rgba(0,0,0,0.2);
-
-        img {
-            max-width: 8vw;
+        &::after {
+          background-color: $orange;
         }
-        .temp {
-            margin: 1em 0;
-            font-size: 5vw;
-        }
-        .condition {
-            font-size: 1.85vw;
-            letter-spacing: 0;
-        }
+      }
+      .grams {
+        padding: 0.75em;
+        font-size: 2em;
+        font-family: 'Source Code Pro', 'Lato', Helvetica, sans-serif;
+        background-color: #333;
+        width: 4em;
+        border-radius: 6px;
+        box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.6);
+      }
     }
-    .coffee-pane {
-        padding: 3em;
-        padding-top: 2em;
-        width: 620px;
-        height: 480px;
-        float: left;
-
-        .gram-slider{
-
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-
-            .rzslider {
-                width: 60%;
-            }
-
-            .rz-bar {
-                background-color: #333;
-                box-shadow: inset 0px 0px 4px rgba(0, 0, 0, 0.6);
-                height: 0.5em;
-                border-radius: 99em;
-
-            }
-
-            .rzslider .rz-bubble {
-                display: none;
-            }
-
-            .rz-pointer {
-                background-color: $orange;
-                width: 37px;
-                height: 37px;
-                border-radius: 99em;
-                top: -15px;
-                box-shadow: 0 2px 3px 1px rgba(0,0,0,0.2);
-
-                &::after{
-                    background-color: $orange;
-                }
-            }
-
-            .grams {
-                padding: 0.75em;
-                font-size: 2em;
-                font-family: 'Source Code Pro', 'Lato', Helvetica, sans-serif;
-                background-color: #333;
-                width: 4em;
-                border-radius: 6px;
-                box-shadow: inset 0px 0px 10px rgba(0, 0, 0, 0.6);
-            }
-        }
-
-        .step {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin: 0.75em 0;
-            text-align: left;
-
-            h3 {
-                padding-bottom: 0.25em;
-                border-bottom: 1px solid white;
-                width: 12em;
-            }
-
-            .timer {
-                font-family: 'Source Code Pro', 'Lato', Helvetica, sans-serif;
-                background-color: #333;
-                font-size: 1.5em;
-                padding: 0.75em;
-                border-radius: 6px;
-                margin-top: 1em;
-                box-shadow: inset 0px 0px 10px rgba(0, 0, 0, 0.6);
-            }
-        }
-
-        .btn-primary {
-            background-color: $orange;
-            width: 50%;
-            border: none;
-            box-shadow: 0 2px 3px 1px rgba(0,0,0,0.2);
-            margin-top: 1.5em;
-
-            &.btn-reset {
-                background-color: #333;
-                width: 20%;
-                margin-left: 1em;
-
-            }
-
-        }
-
+    .step {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin: 0.75em 0;
+      text-align: left;
+      h3 {
+        padding-bottom: 0.25em;
+        border-bottom: 1px solid white;
+        width: 12em;
+      }
+      .timer {
+        font-family: 'Source Code Pro', 'Lato', Helvetica, sans-serif;
+        background-color: #333;
+        font-size: 1.5em;
+        padding: 0.75em;
+        border-radius: 6px;
+        margin-top: 1em;
+        box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.6);
+      }
     }
+    .btn-primary {
+      background-color: $orange;
+      width: 50%;
+      border: none;
+      box-shadow: 0 2px 3px 1px rgba(0,0,0,0.2);
+      margin-top: 1.5em;
+      &.btn-reset {
+        background-color: #333;
+        width: 20%;
+        margin-left: 1em;
+      }
+    }
+  }
 }

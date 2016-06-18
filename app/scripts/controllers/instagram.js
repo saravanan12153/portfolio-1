@@ -24,17 +24,18 @@ angular.module('desktopApp')
 		// Get photos from instagram API
 		instagram.then(function(data) {
 			var response = data.data.data;
-
+			console.log(response);
 			vm.instagramPhotos = [];
 
 			response.forEach(function(photo) {
 				vm.instagramPhotos.push({
-					'image': photo.images.standard_resolution.url,
+					'image': photo.images.low_resolution.url,
+					'location': photo.location.name,
 					'caption': photo.caption.text,
 					'rotate': randomNumber(),
 					'link': photo.link,
 					'created_time': (photo.created_time * 1000),
-					'video': photo.videos === undefined ? '' : photo.videos.standard_resolution.url
+					'video': photo.videos === undefined ? '' : photo.videos.low_resolution.url
 				});
 			});
 		});
