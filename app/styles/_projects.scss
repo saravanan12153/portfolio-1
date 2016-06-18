@@ -1,0 +1,71 @@
+
+.blue-gradient {
+  background-image: linear-gradient(-180deg, #7af0ff 0%, #8052ff 100%);
+}
+
+.red-gradient {
+  background-image: linear-gradient(-180deg, #EAFF5E 0%, #FE4D4D 100%);
+}
+
+.green-gradient {
+  background-image: linear-gradient(-180deg, #81FFE6 0%, #08bf73 100%);
+}
+
+.dev-projects {
+  display: flex;
+  align-items: inline;
+  justify-content: space-around;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+
+  margin-bottom: 8em;
+
+
+
+  .project-card{
+    width: 21vw;
+    min-width: 15em;
+    min-height: 20vh;
+    flex-wrap: wrap;
+    margin: 0 1em;
+    margin-bottom: 2em;
+
+    @media (max-width: 1126px){
+      width: 50vw;
+    }
+
+    border-radius: 6px;
+    box-shadow: 0px 2px 9px 0px rgba(0,0,0,0.40);
+
+    &:hover{
+      box-shadow: 0px 5px 15px 0px rgba(0,0,0,0.50);
+    }
+
+    padding: 1.5em;
+
+    font-family: 'Oxygen', Helvetica, sans-serif;
+    color: white;
+    font-size: 1.5em;
+
+    .project-name{
+      margin-top: 1em;
+    }
+
+    .project-description {
+      font-size: 0.7em;
+      opacity: 0.8;
+    }
+
+    .app-logo{
+      min-height: 6em;
+      max-width: 80%;
+      margin: auto;
+    }
+
+    .taco {
+      width: 90px;
+    }
+
+  }
+}

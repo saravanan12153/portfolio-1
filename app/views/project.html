@@ -1,0 +1,13 @@
+<a ng-href="{{project.url}}" target="new">
+  <div class="project-card" ng-class="project.background">
+    <div class="app-logo">
+    <img ng-src="{{ project.image }}" ng-class="project.imageClass" />
+  </div>
+    <div class="project-name">
+      {{ project.name }}
+    </div>
+    <div class="project-description">
+      {{ project.description }}
+    </div>
+  </div>
+</a>
