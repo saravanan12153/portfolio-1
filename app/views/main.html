@@ -79,7 +79,12 @@
         <div ng-if="windowWidth >= vm.breakPoint" ng-repeat="place in vm.data | limitTo: 3">
 
           <div class="checkin">
-            <i class="fa fa-map-pin" aria-hidden="true"></i>
+            <div ng-if="place.sticker.image.name" class="checkin-marker">
+              <img ng-src="{{place.sticker.image.prefix}}150{{place.sticker.image.name}}" />
+            </div>
+            <div ng-if="!place.sticker.image.name" class="checkin-marker">
+              <i class="fa fa-map-pin" aria-hidden="true"></i>
+            </div>
             <div>
               <div class="name">
                 {{ place.venue.name }}
@@ -95,7 +100,12 @@
         <div ng-if="windowWidth < vm.breakPoint" ng-repeat="place in vm.data | limitTo: 1">
 
           <div class="checkin">
-            <i class="fa fa-map-pin" aria-hidden="true"></i>
+            <div ng-if="place.sticker.image.name" class="checkin-marker">
+              <img ng-src="{{place.sticker.image.prefix}}150{{place.sticker.image.name}}" />
+            </div>
+            <div ng-if="!place.sticker.image.name" class="checkin-marker">
+              <i class="fa fa-map-pin" aria-hidden="true"></i>
+            </div>
             <div>
               <div class="name">
                 {{ place.venue.name }}
