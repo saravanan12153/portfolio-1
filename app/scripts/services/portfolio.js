@@ -139,6 +139,11 @@ angular.module('desktopApp')
                         "class": "misc",
                         "description": "First time on a plane. Went to National History Day in Washington DC."
 
+                    }, {
+                        "id": 1389,
+                        "class": "career",
+                        "description": "Started writing content as a Curriculum Engineer at Codecademy."
+
                     }
                 ]
             }

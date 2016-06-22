@@ -97,6 +97,4 @@ angular.module('desktopApp')
         // Makes life expectancy not a part of notable events
         vm.weeks[4122].notableEvent = false;
 
-
-        // TODO: Create array of last 3-4 items that are important, then make an array of those things and push them to the lifeWeeks object. Then I can surface those for the mobile version of life-weeks in the life weeks html.
     }]);
