@@ -14,7 +14,7 @@ angular.module('desktopApp')
         vm.profile = {
           "avatar": "images/Jon_Samp_SF_zoomed.jpg",
           "name": "Jon Samp",
-          "description": "I'm a front-end developer in Chicago. I like photography, love coffee, and I am about to get a dog.",
+          "description": "I'm a front-end developer in Chicago. I like photography, love coffee, and am about to get a dog.",
           "socialIcons": [{
                 "name": "Github",
                 "icon": "fa-github",

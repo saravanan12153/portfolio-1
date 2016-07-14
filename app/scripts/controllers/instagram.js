@@ -24,7 +24,6 @@ angular.module('desktopApp')
 		// Get photos from instagram API
 		instagram.then(function(data) {
 			var response = data.data.data;
-			console.log(response);
 			vm.instagramPhotos = [];
 
 			response.forEach(function(photo) {
