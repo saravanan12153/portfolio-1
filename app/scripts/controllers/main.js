@@ -37,7 +37,7 @@ angular.module('desktopApp')
 
         vm.projects = {
           'responsive': {
-            'name': 'Respons-erator',
+            'name': 'Responserator',
             'url': 'http://jon-samp.com/#/responsive',
             'background': 'blue-gradient',
             'image': 'images/responsive.svg',
