@@ -1,15 +1,14 @@
-
 <div class="header">
     <p class='pull-left' style="color: white">Life by week:</p>
 </div>
 
 <div class="all-weeks" ng-if="windowWidth >= breakPoint">
     <div ng-repeat="week in weeks track by week.id" class="week-wrapper">
-        <div ng-if="week.description">
-            <div class="sq" ng-class="{{week.class}}" uib-popover-template="week.template" popover-trigger="mouseenter"></div>
+        <div ng-if="week.desc">
+            <div class="sq {{week.class}}" uib-popover-template="week.tpl" popover-trigger="mouseenter"></div>
         </div>
-        <div ng-if="!week.description">
-            <div class="sq" ng-class="{{week.class}}"></div>
+        <div ng-if="!week.desc">
+            <div class="sq {{week.class}}"></div>
         </div>
     </div>
 </div>
@@ -17,10 +16,10 @@
 
 
 <div class="small-weeks" ng-if="windowWidth < breakPoint">
-    <div ng-repeat="week in weeks | filter: { notableEvent: true} | orderBy: id | limitTo: -5 track by week.id" >
+    <div ng-repeat="week in weeks | filter: { nE: true} | orderBy: id | limitTo: -5 track by week.id" >
         <div class="week-entry">
-            <span class="date {{week.class[week.class.length - 1]}}">{{ week.date | date: 'MMMM yyyy' }}</span><br />
-            <span class="description">{{ week.description }}</span>
+            <span class="date {{week.class}}">{{ week.date | date: 'MMMM yyyy' }}</span><br />
+            <span class="desc">{{ week.desc }}</span>
         </div>
     </div>
 </div>

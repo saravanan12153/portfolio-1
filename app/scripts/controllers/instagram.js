@@ -35,7 +35,7 @@ angular.module('desktopApp')
 					'rotate': randomNumber(),
 					'link': photo.link,
 					'created_time': (photo.created_time * 1000),
-					'video': photo.videos === undefined ? '' : photo.videos.low_resolution.url
+					// 'video': photo.videos === undefined ? '' : photo.videos.low_resolution.url
 				});
 			});
 		});

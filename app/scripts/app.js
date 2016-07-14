@@ -39,7 +39,8 @@ angular
 
       $sceDelegateProvider.resourceUrlWhitelist([
           'self',
-          'https://scontent.cdninstagram.com/**'
+          'https://scontent.cdninstagram.com/**',
+          'https://s3.amazonaws.com/**'
       ]);
 
   }]).filter('secondsToDateTime', [function() {

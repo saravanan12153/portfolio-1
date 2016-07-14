@@ -11,7 +11,28 @@ angular.module('desktopApp')
     .controller('MainCtrl', ['portfolioData', function(portfolioData) {
 
         var vm = this;
-        vm.profile = portfolioData;
+        vm.profile = {
+          "avatar": "images/Jon_Samp_SF_zoomed.jpg",
+          "name": "Jon Samp",
+          "description": "I'm a front-end developer in Chicago. I like photography, love coffee, and I am about to get a dog.",
+          "socialIcons": [{
+                "name": "Github",
+                "icon": "fa-github",
+                "url": "https://github.com/jonsamp"
+            }, {
+                "name": "Codepen",
+                "icon": "fa-codepen",
+                "url": "http://codepen.io/jonsamp/"
+            }, {
+                "name": "Medium",
+                "icon": "fa-medium",
+                "url": "https://medium.com/@jonsamp"
+            }, {
+                "name": "Twitter",
+                "icon": "fa-twitter",
+                "url": "https://twitter.com/jonsamp"
+            }]
+        };
         vm.breakPoint = 767;
 
         vm.projects = {

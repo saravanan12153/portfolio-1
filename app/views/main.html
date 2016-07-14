@@ -4,7 +4,7 @@
     <nav>
       <div class="left-nav">
         <img ng-src="{{vm.profile.avatar}}" />
-        <span class="name" ng-if="windowWidth >= vm.breakPoint ">{{ profile.name }}</span>
+        <span class="name" ng-if="windowWidth >= vm.breakPoint ">{{ vm.profile.name }}</span>
       </div>
 
       <div class="social-media">
@@ -20,8 +20,7 @@
   <div class="content-container ">
     <div class="about-me">
       <h3>
-        I'm a front-end developer in Chicago.
-        I like photography, love coffee, and I am thinking about getting a dog.
+        {{ vm.profile.description }}
       </h3>
     </div>
   </div>

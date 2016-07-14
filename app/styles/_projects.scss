@@ -27,12 +27,14 @@
     width: 21vw;
     min-width: 15em;
     min-height: 20vh;
+    max-width: 320px;
     flex-wrap: wrap;
     margin: 0 1em;
     margin-bottom: 2em;
 
     @media (max-width: 1126px){
-      width: 50vw;
+      min-width: 50vw;
+      max-width: 50vw;
     }
 
     border-radius: 6px;
@@ -44,7 +46,7 @@
 
     padding: 1.5em;
 
-    font-family: 'Oxygen', Helvetica, sans-serif;
+    // font-family: 'Oxygen', Helvetica, sans-serif;
     color: white;
     font-size: 1.5em;
 
