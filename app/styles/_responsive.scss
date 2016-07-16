@@ -1,5 +1,4 @@
 .responsive {
-  font-family: Oxygen, Helvetica, sans-serif;
   .measurements {
     height: 50vh;
     display: flex;
@@ -16,7 +15,6 @@
         opacity: 0.6;
       }
       p {
-        font-family: Oxygen, Helvetica, sans-serif;
         text-transform: uppercase;
         letter-spacing: 0.1em;
       }
@@ -33,7 +31,6 @@
       padding: 2em 3em;
       color: $grey-1;
       p {
-        font-family: Oxygen, Helvetica, sans-serif;
         background-color: $grey-5;
         color: $grey-2;
         padding: 0.25em 1em;
