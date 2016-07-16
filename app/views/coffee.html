@@ -1,11 +1,14 @@
 <div class="raspi-app">
+  <div class="info-bar">
   <span class="time" ng-click="vm.reload()">
         {{ vm.currentTime }}
     </span>
 
-  <div class="weather-widget" ng-click="vm.showSummary()">
-    <img ng-src="{{ vm.icon }}" /> {{ vm.temp | number: 0 }}° <span class="summary" ng-show="vm.summaryText">{{ vm.summary }}</span>
+  <div class="weather-widget">
+    {{ vm.temp | number: 0 }}° {{ vm.summary }}
   </div>
+
+</div>
 
   <!-- <div class="weather-pane" style="{{ vm.bgGradient }}">
 

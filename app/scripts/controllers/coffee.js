@@ -66,10 +66,10 @@ angular.module('desktopApp')
         // Get the weather every 5 minutes
         $interval(setWeather, 300000);
 
-        vm.summaryText = false;
-        vm.showSummary = function(){
-          vm.summaryText = vm.summaryText ? false : true;
-        };
+        // vm.summaryText = false;
+        // vm.showSummary = function(){
+        //   vm.summaryText = vm.summaryText ? false : true;
+        // };
 
 
 
@@ -104,7 +104,7 @@ angular.module('desktopApp')
         vm.startBloomTimer = function() {
           vm.isDisabled = true;
                 bloomBegin = $interval(function() {
-                    
+
                     vm.bloomCounter--;
                     if (vm.bloomCounter === 0) {
                         $('.timer').first().css('background-color', '#E84228');
