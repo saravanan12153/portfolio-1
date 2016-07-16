@@ -16,6 +16,8 @@ $yellow: darken(#FBFFB9, 5%);
   -o-background-size: cover;
   color: white;
 
+  font-family: Arial;
+
   .time {
     padding: 0.5em 1em;
     background-color: white;
@@ -110,7 +112,7 @@ $yellow: darken(#FBFFB9, 5%);
       .grams {
         padding: 0.75em;
         font-size: 2em;
-        font-family: 'Courier', monospace, Helvetica, sans-serif;
+        font-family: 'Andale Mono', monospace, Helvetica, sans-serif;
         background-color: #333;
         width: 4em;
         border-radius: 6px;
@@ -133,7 +135,7 @@ $yellow: darken(#FBFFB9, 5%);
 
 
       .timer {
-        font-family: 'Courier', monospace, Helvetica, sans-serif;
+        font-family: 'Andale Mono', monospace, Helvetica, sans-serif;
         background-color: #333;
         font-size: 1.5em;
         padding: 0.75em;
