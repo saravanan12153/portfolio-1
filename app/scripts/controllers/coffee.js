@@ -66,6 +66,13 @@ angular.module('desktopApp')
         // Get the weather every 5 minutes
         $interval(setWeather, 300000);
 
+        vm.summaryText = false;
+        vm.showSummary = function(){
+          vm.summaryText = vm.summaryText ? false : true;
+        };
+
+
+
         vm.sliderValue = 10;
         vm.bloomGrams = vm.sliderValue * 2;
         vm.pourGrams = vm.sliderValue * 16;
@@ -95,8 +102,9 @@ angular.module('desktopApp')
             pourBegin;
 
         vm.startBloomTimer = function() {
+          vm.isDisabled = true;
                 bloomBegin = $interval(function() {
-                    vm.isDisabled = true;
+                    
                     vm.bloomCounter--;
                     if (vm.bloomCounter === 0) {
                         $('.timer').first().css('background-color', '#E84228');
@@ -133,32 +141,36 @@ angular.module('desktopApp')
 
 
         // Gets time working, and updating every second.
-        // function updateTime() {
-        //     var currentTime = new Date();
-        //     var hours = currentTime.getHours();
-        //     var minutes = currentTime.getMinutes();
-        //     if (minutes < 10) {
-        //         minutes = "0" + minutes;
-        //     }
-        //     var t_str = hours + ":" + minutes;
-        //
-        //     if (hours > 11) {
-        //         t_str = (hours - 12) + ":" + minutes;
-        //         t_str += " PM";
-        //         if (hours == 12) {
-        //             t_str = "12:" + minutes;
-        //             t_str += " PM";
-        //         }
-        //     } else if (hours === 0) {
-        //         t_str = '12:' + minutes + "AM";
-        //
-        //     } else {
-        //         t_str += "AM";
-        //     }
-        //
-        //     vm.currentTime = t_str;
-        // }
-        // $interval(updateTime, 1000);
-        // updateTime();
+        function updateTime() {
+            var currentTime = new Date();
+            var hours = currentTime.getHours();
+            var minutes = currentTime.getMinutes();
+            if (minutes < 10) {
+                minutes = "0" + minutes;
+            }
+            var t_str = hours + ":" + minutes;
+
+            if (hours > 11) {
+                t_str = (hours - 12) + ":" + minutes;
+                t_str += " PM";
+                if (hours == 12) {
+                    t_str = "12:" + minutes;
+                    t_str += " PM";
+                }
+            } else if (hours === 0) {
+                t_str = '12:' + minutes + "AM";
+
+            } else {
+                t_str += "AM";
+            }
+
+            vm.currentTime = t_str;
+        }
+        $interval(updateTime, 1000);
+        updateTime();
+
+        vm.reload = function() {
+          window.location.reload();
+        }
 
     }]);

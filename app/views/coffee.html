@@ -1,9 +1,13 @@
 <div class="raspi-app">
-    <!-- <span class="time">
+  <span class="time" ng-click="vm.reload()">
         {{ vm.currentTime }}
-    </span> -->
+    </span>
 
-    <div class="weather-pane" style="{{ vm.bgGradient }}">
+  <div class="weather-widget" ng-click="vm.showSummary()">
+    <img ng-src="{{ vm.icon }}" /> {{ vm.temp | number: 0 }}° <span class="summary" ng-show="vm.summaryText">{{ vm.summary }}</span>
+  </div>
+
+  <!-- <div class="weather-pane" style="{{ vm.bgGradient }}">
 
         <div class="weather-icon">
             <img ng-src="{{ vm.icon }}" />
@@ -12,40 +16,40 @@
         <div class="temp" style="{{ vm.color }}">{{ vm.temp | number: 0 }}°</div>
         <div class="condition" style="{{ vm.color }}">{{ vm.summary }}</div>
 
+    </div> -->
+
+  <div class="coffee-pane">
+    <div class="gram-slider">
+      <div class="grams">{{ vm.sliderValue }}g</div>
+      <rzslider rz-slider-model="vm.gramSlider.value" rz-slider-options="vm.gramSlider.options" class="with-legend"></rzslider>
     </div>
 
-    <div class="coffee-pane">
-        <div class="gram-slider">
-            <div class="grams">{{ vm.sliderValue }}g</div>
-            <rzslider rz-slider-model="vm.gramSlider.value" rz-slider-options="vm.gramSlider.options" class="with-legend"></rzslider>
-        </div>
-
-        <div class="step">
-            <div class="title">
-                <h3>Bloom</h3>
-                <p>Pour {{ vm.bloomGrams }}g</p>
-            </div>
-            <div class="timer">
-                {{ vm.bloomCounter | secondsToDateTime | date: 'mm:ss' }}
-            </div>
-        </div>
-
-        <div class="step">
-            <div class="title">
-                <h3>Pour</h3>
-                <p>
-                    Half pour: {{ vm.halfPour }}g<br />
-                    Total pour: {{ vm.pourGrams }}g</p>
-            </div>
-            <div class="timer">
-                {{vm.pourCounter | secondsToDateTime | date: 'mm:ss'}}
-            </div>
-        </div>
-
-
-
-        <button ng-click="vm.startBloomTimer()" class="btn btn-lg btn-primary" ng-disabled="vm.isDisabled">{{ vm.isDisabled ? "Currently Brewing" : "Begin Pour Over" }}</button>
-        <button ng-click="vm.stopTimer()" class="btn btn-lg btn-primary btn-reset" ng-if="vm.isDisabled">Reset</button>
-
+    <div class="step">
+      <div class="title">
+        <h3>Bloom</h3>
+        <p>Pour {{ vm.bloomGrams }}g</p>
+      </div>
+      <div class="timer">
+        {{ vm.bloomCounter | secondsToDateTime | date: 'mm:ss' }}
+      </div>
     </div>
+
+    <div class="step">
+      <div class="title">
+        <h3>Pour</h3>
+        <p>
+          Half pour: {{ vm.halfPour }}g
+          <br /> Total pour: {{ vm.pourGrams }}g</p>
+      </div>
+      <div class="timer">
+        {{vm.pourCounter | secondsToDateTime | date: 'mm:ss'}}
+      </div>
+    </div>
+
+
+
+    <button ng-click="vm.startBloomTimer()" class="btn btn-lg btn-primary" ng-disabled="vm.isDisabled">{{ vm.isDisabled ? "Currently Brewing" : "Begin Pour Over" }}</button>
+    <button ng-click="vm.stopTimer()" class="btn btn-lg btn-primary btn-reset" ng-if="vm.isDisabled">Reset</button>
+
+  </div>
 </div>
