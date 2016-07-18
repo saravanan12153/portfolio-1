@@ -158,6 +158,7 @@ angular.module('desktopApp')
       vm.pourCounter = 225 - vm.bloomCounter;
       vm.isDisabled = false;
       $('.percent-bar').css('width', '0%');
+      $('.timer').first().css('background-color', '#333');
     };
 
 
