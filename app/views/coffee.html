@@ -23,14 +23,16 @@
 
   <div class="coffee-pane">
     <div class="gram-slider">
-      <div class="grams">{{ vm.sliderValue }}g</div>
       <rzslider rz-slider-model="vm.gramSlider.value" rz-slider-options="vm.gramSlider.options" class="with-legend"></rzslider>
+      <div class="grams">{{ vm.sliderValue }}g</div>
     </div>
 
     <div class="step">
       <div class="title">
-        <h3>Bloom</h3>
-        <p>Pour {{ vm.bloomGrams }}g</p>
+        <h3>Bloom: {{ vm.bloomGrams }}g</h3>
+        <div class="progress-bar">
+          <div class="percent-bar" style='width: {{ vm.percentBloom }}%'></div>
+        </div>
       </div>
       <div class="timer">
         {{ vm.bloomCounter | secondsToDateTime | date: 'mm:ss' }}
@@ -39,10 +41,10 @@
 
     <div class="step">
       <div class="title">
-        <h3>Pour</h3>
-        <p>
-          Half pour: {{ vm.halfPour }}g
-          <br /> Total pour: {{ vm.pourGrams }}g</p>
+        <h3>Pour: {{ vm.halfPour }}g, {{ vm.pourGrams }}g</h3>
+        <div class="progress-bar">
+          <div class="percent-bar" style='width: {{ vm.percentPour }}%'></div>
+        </div>
       </div>
       <div class="timer">
         {{vm.pourCounter | secondsToDateTime | date: 'mm:ss'}}
