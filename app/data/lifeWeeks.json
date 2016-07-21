@@ -5751,11 +5751,13 @@
   }, {
     "id": 1399,
     "date": 1468195200000,
-    "desc": "This week.",
     "tpl": "views/templates/general.tpl.html"
   }, {
     "id": 1400,
     "date": 1468800000000,
+    "desc": "Got a new friend, named Nikko, a Shiba Inu.",
+    "class": "life-event",
+    "nE": true,
     "tpl": "views/templates/general.tpl.html"
   }, {
     "id": 1401,
