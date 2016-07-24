@@ -41,7 +41,7 @@ angular.module('desktopApp')
                   weeks[i].class += ' past';
               } else if (thisWeek === weeks[i].date) {
                   weeks[i].class += ' thisWeek';
-                  weeks[i].description = "This week.";
+                  weeks[i].desc = "This week.";
               } else {
                   weeks[i].class += ' future';
               }
@@ -54,7 +54,7 @@ angular.module('desktopApp')
                   weeks[i].class = 'past';
               } else if (thisWeek === weeks[i].date) {
                   weeks[i].class = 'thisWeek';
-                  weeks[i].description = "This week.";
+                  weeks[i].desc = "This week.";
               } else {
                   weeks[i].class = 'future';
               }
