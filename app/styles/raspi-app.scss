@@ -45,6 +45,11 @@ $yellow: darken(#FBFFB9, 5%);
     img{
       width: 1.5em;
     }
+    canvas{
+      opacity: 1;
+      height: 1.5em;
+      margin: 0 -8px -8px -8px;
+    }
   }
 
   .weather-pane {

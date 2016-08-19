@@ -1,3 +1,5 @@
+<script src='../vendor/skycons.js'></script>
+
 <div class="raspi-app">
   <div class="info-bar">
   <span class="time" ng-click="vm.reload()">
@@ -5,7 +7,7 @@
     </span>
 
   <div class="weather-widget">
-    {{ vm.temp | number: 0 }}° {{ vm.summary }}
+    <canvas id="weather_icon"></canvas> {{ vm.temp | number: 0 }}° {{ vm.summary }}
   </div>
 
 </div>

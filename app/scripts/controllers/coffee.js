@@ -24,15 +24,19 @@ angular.module('desktopApp')
 				jsonpCallback: 'callback',
 				type: 'GET',
 				success: function(response) {
-					console.log(response);
 					vm.icon = 'images/weather_icons/' + response.currently.icon + '.svg';
 					vm.temp = response.currently.temperature;
 					vm.summary = response.minutely.summary;
 					var condition = response.currently.icon;
-					setWeatherBg(condition);
+					// setWeatherBg(condition);
+					var skycons = new Skycons({"color": "white"});
+					skycons.add("weather_icon", response.currently.icon);
+					skycons.play();
 				}
 			});
 		}
+
+
 
 		// function setWeatherBg(icon) {
 		//     var gradient = {
